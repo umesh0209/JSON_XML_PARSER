@@ -18,6 +18,7 @@ public class OpenWeatherAccess {
 		jsonObj = new ParseJson();
 		geoObj = new GeoLocation();
 		jsonObj.setGeoObj(geoObj);
+		geoObj.setJsonObj(jsonObj);
 	}
 	
 	public void scanData()
@@ -65,16 +66,11 @@ public class OpenWeatherAccess {
 		}     
 	}
 	
-	private void extractGeoLoc() throws MalformedURLException{
-		System.out.println("extractGeoLoc():called");
-		jsonObj.setService(ParseJson.GEOCODE_GOOGLE_SERVICE);
-		jsonObj.makeURL();
-		jsonObj.parseJsonData();
-	}
+
 	
 	public void extractLocTemp() throws MalformedURLException {
 		System.out.println("extractLocTemp():called");
-		extractGeoLoc();
+		geoObj.extractGeoLoc();
 		
 		jsonObj.setService(ParseJson.OPEN_WEATHER_SERVICE);
 		jsonObj.makeURL();

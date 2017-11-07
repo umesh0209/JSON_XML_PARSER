@@ -9,17 +9,23 @@ public class GeoLocation {
 	
 	private String city;
 	private double lat,lon;
-	//private ParseJson jsonObj;
+	private ParseJson jsonObj;
 	
 	public GeoLocation() {
 		System.out.println("GeoLocation():called");
 		city = null;
 		lat = lon = 0;
+		jsonObj = null;
 	}
 	
 	public void setCity(String city) {
 		System.out.println("setCity():called"+city);
 		this.city = city;
+	}
+	
+	public void setJsonObj(ParseJson obj) {
+		System.out.println("setJsonObj():called"+city);
+		this.jsonObj = obj;
 	}
 	
 	public String getCity() {
@@ -28,7 +34,10 @@ public class GeoLocation {
 	}
 	
 	public void extractGeoLoc() throws MalformedURLException{
-		//ParseJson jsonObj = new ParseJson();
+		System.out.println("extractGeoLoc():called");
+		jsonObj.setService(ParseJson.GEOCODE_GOOGLE_SERVICE);
+		jsonObj.makeURL();
+		jsonObj.parseJsonData();
 	}
 
 	public double getLat() {
