@@ -41,10 +41,13 @@ public class HttpHandler {
 
 	      } catch (MalformedURLException e) {
 	         System.out.println("MalformedURLException: " + e.getMessage());
+	         System.exit(0);
 	      } catch (ProtocolException e) {
 	    	  System.out.println("ProtocolException: " + e.getMessage());
+	    	  System.exit(0);
 	      } catch (Exception e) {
 	    	  System.out.println("Exception: " + e.getCause().toString());
+	    	  System.exit(0);
 	      }	      
 	   }
 	   
@@ -72,11 +75,13 @@ public class HttpHandler {
 	         }
 	      } catch (IOException e) {
 	         e.printStackTrace();
+	         System.exit(0);
 	      } finally {
 	         try {
 	            is.close();
 	         } catch (IOException e) {
 	            e.printStackTrace();
+	            System.exit(0);
 	         }
 	      }
 	        

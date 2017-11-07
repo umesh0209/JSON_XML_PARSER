@@ -221,10 +221,12 @@ public class ParseJson {
 
             }catch(IOException ie){
             	System.out.println(ie.getMessage());
+            	System.exit(0);
             }catch (Exception e) {
     	    	System.out.println("parseJsonOpenWeatherCurrent():Check the input especially appid");
     	    	e.getClass().toString();
     	    	e.printStackTrace();
+    	    	System.exit(0);
     	    }
     		System.out.println("parseJsonOpenWeatherCurrent():Object mode exiting...");
     	}
@@ -282,8 +284,10 @@ public class ParseJson {
 
     				 }catch(JsonParseException jpe){ 
     					 jpe.printStackTrace();
+    					 System.exit(0);
     				 }catch (MalformedURLException mue){
     					 mue.printStackTrace();
+    					 System.exit(0);
     				 }catch(IOException ie){
     					 System.out.println("parseJsonOpenWeatherCurrent():Check the input especially appid");
     					 System.exit(0);
@@ -375,10 +379,12 @@ public class ParseJson {
             	}
             }catch(IOException ie){
             	System.out.println(ie.getMessage());
+            	System.exit(0);
             }catch (Exception e) {
     	    	System.out.println("parseJsonGeoLoc():Check the input especially appid");
     	    	e.getClass().toString();
     	    	e.printStackTrace();
+    	    	System.exit(0);
     	    }
     		System.out.println("parseJsonGeoLoc():Object mode exiting...");
     	}
@@ -445,8 +451,10 @@ public class ParseJson {
 
 				 }catch(JsonParseException jpe){ 
 					 jpe.printStackTrace();
+					 System.exit(0);
 				 }catch (MalformedURLException mue){
 					 mue.printStackTrace();
+					 System.exit(0);
 				 }catch(IOException ie){
 					 System.out.println("parseJsonGeoLoc():Check the input especially appid");
 					 System.exit(0);
