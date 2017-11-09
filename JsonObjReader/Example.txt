@@ -1,0 +1,424 @@
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Example 1:OFallon MO USA Unit = F,mode = Object
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+OpenWeatherAccess():called
+JsonParser():called
+GeoLocation():called
+setJsonObj():callednull
+scanData():called
+Enter Json Mode(OBJECT=1,STREAM=2)
+1
+Enter Units 0=>Celsius, 1=>Fahrenheit
+1
+Enter <city>space<State>space<Country>
+OFallon MO USA
+setCity():calledOFallon MO USA
+extractLocTemp():called
+extractGeoLoc():called
+makeURL(2):called
+makeGeoLocURL():called
+getCity():called
+makeGeoLocURL():replace addr=OFallon+MO+USA
+makeGeoLocURL():Key id added
+makeGeoLocURL():URL is=https://maps.googleapis.com/maps/api/geocode/json?address=OFallon+MO+USA&key=AIzaSyCHgwZch0_BgNZoQRB971kzT3a26FmnI3A
+parseJsonData():called
+parseJsonGeoLoc():called
+setFileName()Geocode.json
+makeServiceCall():https://maps.googleapis.com/maps/api/geocode/json?address=OFallon+MO+USA&key=AIzaSyCHgwZch0_BgNZoQRB971kzT3a26FmnI3A
+makeServiceCall():connecting....
+makeServiceCall():response recvd....
+currLocReader={"results":[{"formatted_address":"O'Fallon, MO, USA","types":["locality","political"],"geometry":{"viewport":{"southwest":{"lng":-90.82075479999999,"lat":38.71263},"northeast":{"lng":-90.64889289999999,"lat":38.8731991}},"bounds":{"southwest":{"lng":-90.82075479999999,"lat":38.71263},"northeast":{"lng":-90.64889289999999,"lat":38.8731991}},"location":{"lng":-90.69984769999999,"lat":38.8106075},"location_type":"APPROXIMATE"},"address_components":[{"types":["locality","political"],"short_name":"O'Fallon","long_name":"O'Fallon"},{"types":["administrative_area_level_2","political"],"short_name":"St Charles County","long_name":"St. Charles County"},{"types":["administrative_area_level_1","political"],"short_name":"MO","long_name":"Missouri"},{"types":["country","political"],"short_name":"US","long_name":"United States"}],"place_id":"ChIJs6aOAfvQ3ocRidnJA-TANLE"}],"status":"OK"}
+parseJsonGeoLoc(): Success
+parseJsonGeoLoc():Object mode exiting...
+makeURL(1):called
+makeOpenWeatherURL():called
+makeOpenWeatherURL():Adding lat_val=38.8106075 to Ope(n weather URL
+makeOpenWeatherURL():Adding lon_val=-90.69984769999999 to Open weather URL
+makeOpenWeatherURL():imperial(F) added
+makeOpenWeatherURL():App id added
+makeOpenWeatherURL():URL is=http://api.openweathermap.org/data/2.5/weather?lat=38.8106075&lon=-90.69984769999999&units=imperial&appid=3fca5279c45094c8c4d23b9d13d53d7d
+parseJsonData():called
+parseJsonOpenWeatherCurrent():called
+setFileName()Loc.json
+makeServiceCall():http://api.openweathermap.org/data/2.5/weather?lat=38.8106075&lon=-90.69984769999999&units=imperial&appid=3fca5279c45094c8c4d23b9d13d53d7d
+makeServiceCall():connecting....
+makeServiceCall():response recvd....
+{"dt":1510264440,"coord":{"lon":-90.7,"lat":38.81},"visibility":16093,"weather":[{"icon":"01d","description":"clear sky","main":"Clear","id":800}],"name":"OFallon","cod":200,"main":{"temp":52.52,"temp_min":50,"humidity":40,"pressure":1025,"temp_max":55.4},"clouds":{"all":1},"id":4401242,"sys":{"country":"US","sunrise":1510231198,"sunset":1510267982,"id":1665,"type":1,"message":0.0036},"base":"stations","wind":{"deg":320,"speed":12.75}}
+parseJsonOpenWeatherCurrent():code=200 Success
+{"temp":52.52,"temp_min":50,"humidity":40,"pressure":1025,"temp_max":55.4}
+unboxObjToNum():called
+unboxObjToNum():instanceof double
+unboxObjToNum():called
+unboxObjToNum():instanceof double
+unboxObjToNum():called
+unboxObjToNum():instanceof Long
+unboxObjToNum():called
+unboxObjToNum():instanceof Long
+{"all":1}
+unboxObjToNum():called
+unboxObjToNum():instanceof Long
+{"deg":320,"speed":12.75}
+unboxObjToNum():called
+unboxObjToNum():instanceof double
+parseJsonOpenWeatherCurrent():Object mode exiting...
+**********************************************
+Temp(CURR)=52.52°F Temp(MIN)=50.0°F TEMP(MAX)55.4°F
+Humidity=40.0% Winds= 12.75 miles/hr Clouds=1.0%
+Description=clear sky
+**********************************************
+======================================================================================================================================================
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Example 2:Montreal Quebec CAN Unit = C,mode = Stream
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+OpenWeatherAccess():called
+JsonParser():called
+GeoLocation():called
+setJsonObj():callednull
+scanData():called
+Enter Json Mode(OBJECT=1,STREAM=2)
+2
+Enter Units 0=>Celsius, 1=>Fahrenheit
+0
+Enter <city>space<State>space<Country>
+Montreal Quebec CAN
+setCity():calledMontreal Quebec CAN
+extractLocTemp():called
+extractGeoLoc():called
+makeURL(2):called
+makeGeoLocURL():called
+getCity():called
+makeGeoLocURL():replace addr=Montreal+Quebec+CAN
+makeGeoLocURL():Key id added
+makeGeoLocURL():URL is=https://maps.googleapis.com/maps/api/geocode/json?address=Montreal+Quebec+CAN&key=AIzaSyCHgwZch0_BgNZoQRB971kzT3a26FmnI3A
+parseJsonData():called
+parseJsonGeoLoc():called
+Stream mode selected
+parseJsonGeoLoc():Entering streaming mode
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=results token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=results token=START_ARRAY
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=address_components token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=address_components token=START_ARRAY
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=types token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=START_ARRAY
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=END_ARRAY
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=END_OBJECT
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=types token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=START_ARRAY
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=END_ARRAY
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=END_OBJECT
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=types token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=START_ARRAY
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=END_ARRAY
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=END_OBJECT
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=long_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=short_name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=types token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=START_ARRAY
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=END_ARRAY
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=END_OBJECT
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=address_components token=END_ARRAY
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=formatted_address token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=formatted_address token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=geometry token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=geometry token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=bounds token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=bounds token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=northeast token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=northeast token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=VALUE_NUMBER_FLOAT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=VALUE_NUMBER_FLOAT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=northeast token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=southwest token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=southwest token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=VALUE_NUMBER_FLOAT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=VALUE_NUMBER_FLOAT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=southwest token=END_OBJECT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=bounds token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonGeoLoc(): location=START_OBJECT
+parseJsonGeoLoc(): Extracting Status...=VALUE_NUMBER_FLOAT
+parseJsonGeoLoc():Lat=45.5016889
+parseJsonGeoLoc(): Extracting Status...=VALUE_NUMBER_FLOAT
+parseJsonGeoLoc():Lng=-73.567256
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=location_type token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=location_type token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=viewport token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=viewport token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=northeast token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=northeast token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=VALUE_NUMBER_FLOAT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=VALUE_NUMBER_FLOAT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=northeast token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=southwest token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=southwest token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=VALUE_NUMBER_FLOAT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lng token=VALUE_NUMBER_FLOAT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=southwest token=END_OBJECT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=viewport token=END_OBJECT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=geometry token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=place_id token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=place_id token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=types token=FIELD_NAME
+Jump to next token...START_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=START_ARRAY
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=null token=VALUE_STRING
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=types token=END_ARRAY
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=null token=END_OBJECT
+Jump to next token...END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=results token=END_ARRAY
+Jump to next token...FIELD_NAME
+parseJsonGeoLoc(): Extracting Status...=VALUE_STRING
+parseJsonGeoLoc():stat=OK
+parseJsonGeoLoc():code=OK
+parseJsonGeoLoc():Stream mode exiting...
+makeURL(1):called
+makeOpenWeatherURL():called
+makeOpenWeatherURL():Adding lat_val=45.5016889 to Ope(n weather URL
+makeOpenWeatherURL():Adding lon_val=-73.567256 to Open weather URL
+makeOpenWeatherURL():metric(C) added
+makeOpenWeatherURL():App id added
+makeOpenWeatherURL():URL is=http://api.openweathermap.org/data/2.5/weather?lat=45.5016889&lon=-73.567256&units=metric&appid=3fca5279c45094c8c4d23b9d13d53d7d
+parseJsonData():called
+parseJsonOpenWeatherCurrent():called
+parseJsonOpenWeatherCurrent():Stream mode selected
+parseJsonOpenWeatherCurrent():Entering streaming mode
+parseJsonOpenWeatherCurrent(): Skipping...=null token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=coord token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=coord token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lon token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lon token=VALUE_NUMBER_FLOAT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=lat token=VALUE_NUMBER_FLOAT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=coord token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): weather=START_ARRAY
+parseJsonOpenWeatherCurrent(): weather_obj=START_OBJECT name=null
+parseJsonOpenWeatherCurrent(): weather_obj=FIELD_NAME name=id
+parseJsonOpenWeatherCurrent(): weather_obj=VALUE_NUMBER_INT name=id
+parseJsonOpenWeatherCurrent(): weather_obj=FIELD_NAME name=main
+parseJsonOpenWeatherCurrent(): weather_obj=VALUE_STRING name=main
+parseJsonOpenWeatherCurrent(): weather_obj=FIELD_NAME name=description
+parseJsonOpenWeatherCurrent(): Extracting description...=VALUE_STRING
+parseJsonOpenWeatherCurrent(): weather_obj=FIELD_NAME name=icon
+parseJsonOpenWeatherCurrent(): weather_obj=VALUE_STRING name=icon
+parseJsonOpenWeatherCurrent(): weather=END_ARRAY
+parseJsonOpenWeatherCurrent(): Skipping...=icon token=END_ARRAY
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=base token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=base token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): main=START_OBJECT
+parseJsonOpenWeatherCurrent(): Extracting temp...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Extracting humidity...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Extracting temp_min...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Extracting temp_max...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=temp_max token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=visibility token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=visibility token=VALUE_NUMBER_INT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): wind=START_OBJECT
+parseJsonOpenWeatherCurrent(): Extracting wind speed...=VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=deg token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): cloud=START_OBJECT
+parseJsonOpenWeatherCurrent(): Extracting clouds...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=all token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=dt token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=dt token=VALUE_NUMBER_INT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=sys token=FIELD_NAME
+Jump to next token...START_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=sys token=START_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=type token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=type token=VALUE_NUMBER_INT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=id token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=id token=VALUE_NUMBER_INT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=message token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=message token=VALUE_NUMBER_FLOAT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=country token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=country token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=sunrise token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=sunrise token=VALUE_NUMBER_INT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=sunset token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=sunset token=VALUE_NUMBER_INT
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent(): Skipping...=sys token=END_OBJECT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=id token=FIELD_NAME
+Jump to next token...VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=id token=VALUE_NUMBER_INT
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Skipping...=name token=FIELD_NAME
+Jump to next token...VALUE_STRING
+parseJsonOpenWeatherCurrent(): Skipping...=name token=VALUE_STRING
+Jump to next token...FIELD_NAME
+parseJsonOpenWeatherCurrent(): Extracting cod...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): Skipping...=cod token=FIELD_NAME
+Jump to next token...END_OBJECT
+parseJsonOpenWeatherCurrent():code=SUCCESS
+parseJsonOpenWeatherCurrent():Stream mode exiting...
+**********************************************
+Temp(CURR)=6.0°C Temp(MIN)=6.0°C TEMP(MAX)6.0°C
+Humidity=56.0% Winds= 5.7 meters/sec Clouds=90.0%
+Description=overcast clouds
+**********************************************
