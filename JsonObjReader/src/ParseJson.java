@@ -344,9 +344,9 @@ public class ParseJson {
     							parseStream = false;
       						}
 
-        					System.out.println("parseJsonOpenWeatherCurrent(): Skipping...="+fieldName+" token="+tok);
-        					System.out.println("Jump to next token...");
+        					System.out.println("parseJsonOpenWeatherCurrent(): Skipping...="+fieldName+" token="+tok);    					
         					tok=parser.nextToken();
+        					System.out.println("Jump to next token..."+tok);
     					}
     					
     	            	if (status != 200){
@@ -521,8 +521,9 @@ public class ParseJson {
 							parseStream = false;
 							continue;
 						}
-        				System.out.println("Jump to next token...");
+						System.out.println("parseJsonOpenWeatherCurrent(): Skipping...="+fieldName+" token="+tok); 
 						tok = parser.nextToken();
+						System.out.println("Jump to next token..."+tok);
 					}
 
 	            	if (!STATUS.equals("OK")){
