@@ -533,7 +533,6 @@ public class ParseJson {
 	            	else {
 	            		System.out.println("parseJsonGeoLoc():code="+STATUS);
 	            	}
-
 				 }catch(JsonParseException jpe){ 
 					 jpe.printStackTrace();
 					 System.exit(0);
