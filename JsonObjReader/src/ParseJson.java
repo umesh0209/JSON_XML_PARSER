@@ -23,13 +23,18 @@ public class ParseJson {
 	private int service;
 	private int jsonMode;
 	private String serviceUrl;
-	private double temp;
+	private double temp,temp_max,temp_min,humidity,windSpeed,clouds;
+	private String windUnit;
 	private GeoLocation geoObj;
+	private String unitSymbol;
 	
 	/****************************************************************************
-	 *                         PUBLIC CONSTANTS                                 *
+	 *                         PUBLIC/PRIVATE CONSTANTS                                 *
 	 ****************************************************************************/
-	
+	private final String DEGREE  = "\u00b0";
+	private final String MILES_PER_HR = "miles/hr";
+	private final String METERS_PER_SEC = "meters/sec";
+	private final String PERCENTAGE ="%";
 	public static final int NONE_SERVICE = 0;
 	public static final int OPEN_WEATHER_SERVICE = 1;
 	public static final int GEOCODE_GOOGLE_SERVICE = 2;
@@ -43,10 +48,14 @@ public class ParseJson {
 	 ****************************************************************************/
 	public ParseJson() {
 		System.out.println("JsonParser():called");
-		fahrenheit = true;
+		fahrenheit = true;;
+		windUnit = MILES_PER_HR;
+		unitSymbol = DEGREE+"F";
 		service = NONE_SERVICE;
 		jsonMode = NONE_MODE;
 		serviceUrl=null;
+		temp = temp_max= temp_min = 0.0;
+		clouds = humidity = windSpeed = 0.0;
 	}
 	
 	public void setGeoObj(GeoLocation g) {
@@ -58,7 +67,10 @@ public class ParseJson {
 	}
 	
 	public void displayTemp() {
-		System.out.println("displayTemp():Temp ="+temp); 
+		System.out.println("**********************************************");
+		System.out.println("Temp(CURR)="+temp+unitSymbol+" Temp(MIN)="+temp_min+unitSymbol+" TEMP(MAX)"+temp_max+unitSymbol);
+		System.out.println("Humidity="+humidity+PERCENTAGE+" Winds= "+windSpeed+" "+windUnit+" Clouds="+clouds+PERCENTAGE);
+		System.out.println("**********************************************");
 	}
 	
 	public void setService(int serv) {
@@ -71,6 +83,13 @@ public class ParseJson {
 	
 	public void setUnit(boolean f) {
 		this.fahrenheit = f;
+		if (this.fahrenheit == true) {
+			this.unitSymbol = DEGREE+"F";
+			this.windUnit = MILES_PER_HR;
+		}else {
+			this.unitSymbol = DEGREE+"C";
+			this.windUnit = METERS_PER_SEC;
+		}
 	}
 	
 	public void makeURL() {
@@ -207,11 +226,28 @@ public class ParseJson {
             		System.out.println("parseJsonOpenWeatherCurrent():code="+code.intValue()+" Success");
             		JSONObject main = (JSONObject)currLocReader.get("main");
             		System.out.println(main);
-            		//temp = (Long) main.get("temp");
-            		//temp = (Long) main.g
             		//System.out.println("parseJson():Temp ="+temp);  
-            		t = (Object)main.get("temp");
+            		t = main.get("temp");
             		temp = unboxObjToNum(t);
+            		
+            		t = (Object)main.get("temp_max");
+            		temp_max = unboxObjToNum(t);
+            		
+            		t = (Object)main.get("temp_min");
+            		temp_min = unboxObjToNum(t);
+            		
+            		t = (Object)main.get("humidity");
+            		humidity = unboxObjToNum(t);
+            		
+            		JSONObject clouds1 = (JSONObject)currLocReader.get("clouds");
+            		System.out.println(clouds1);
+            		t = (Object)clouds1.get("all");
+            		clouds= unboxObjToNum(t);
+            		
+            		JSONObject winds = (JSONObject)currLocReader.get("wind");
+            		System.out.println(winds);
+            		t = (Object)winds.get("speed");
+            		windSpeed=unboxObjToNum(t);
             	}
             	else{
             		//401
@@ -246,40 +282,79 @@ public class ParseJson {
     					System.out.println("parseJsonOpenWeatherCurrent():Entering streaming mode");
     					
     					String fieldName;
-    					int parseElem,status;
+    					int status = 0;
+    					boolean parseStream;
     					
-    					JsonToken t = null;
+    					JsonToken tok = null;
     					//Skipping all null at the beginning of stream...
-    					while((t=parser.nextToken())!=JsonToken.START_OBJECT) {
+    					while((tok=parser.nextToken())!=JsonToken.START_OBJECT) {
     						System.out.println("parseJsonOpenWeatherCurrent(): Skipping..."+(String)parser.getCurrentName());
     					}
 
-    					parseElem =2;status = 200;
-    					//Note: Min value for parseElem is 1 and always parse for "cod"(status),Set number of elements to be parsed, 
-    					//if status = 200(Success)then required elements can be parsed, if not it is an error case
-    					while( parseElem != 0 && status==200) {
+    					//exit the streaming once code, status of streaming is found
+    					//if cod is success, means required fields are found
+    					parseStream = true;
+    					while( parseStream == true) {
     						fieldName =  parser.getCurrentName();
-    						if ("temp".equals(fieldName)) {
-    							parseElem--;
-    							parser.nextToken();
-								temp = parser.getLongValue();
-    						}
-    						
-    						if ("cod".equals(fieldName)) {
-    							parseElem --;
-    							parser.nextToken();
+    						if ("main".equals(fieldName)) {
+    							tok = parser.nextToken();
+    							System.out.println("parseJsonOpenWeatherCurrent(): main="+tok);
+    							while (tok != JsonToken.END_OBJECT) {
+    								fieldName =  parser.getCurrentName();
+    								if ("temp".equals(fieldName)) {
+     	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting temp...="+parser.nextToken());
+    	    							temp = parser.getDoubleValue(); 	    							
+    	    						}else if ("temp_min".equals(fieldName)) {
+    	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting temp_min...="+parser.nextToken());
+    	    							temp_min = parser.getDoubleValue();
+    	    						}else if ("temp_max".equals(fieldName)) {
+    	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting temp_max...="+parser.nextToken());
+    	    							temp_max = parser.getDoubleValue();
+    	    						}else if ("humidity".equals(fieldName)) {
+    	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting humidity...="+parser.nextToken());
+    	    							humidity = parser.getDoubleValue();
+    	    						}
+	    							tok = parser.nextToken();
+    							}
+    						}else if("wind".equals(fieldName)) {
+    							tok = parser.nextToken();
+    							System.out.println("parseJsonOpenWeatherCurrent(): wind="+tok);
+    							while(tok != JsonToken.END_OBJECT) {
+    								fieldName =  parser.getCurrentName();
+    								if ("speed".equals(fieldName)) {
+    	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting wind speed...="+parser.nextToken());
+    	    							windSpeed = parser.getDoubleValue();
+    	    						}
+	    							tok = parser.nextToken();
+    							}
+    						}else if ("clouds".equals(fieldName)) {
+       							tok = parser.nextToken();
+       							System.out.println("parseJsonOpenWeatherCurrent(): cloud="+tok);
+    							while(tok != JsonToken.END_OBJECT) {
+    								fieldName =  parser.getCurrentName();
+    								if ("all".equals(fieldName)) {
+    	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting clouds...="+parser.nextToken());
+    	    							clouds = parser.getDoubleValue();
+    	    						}
+	    							tok = parser.nextToken();
+    							}
+    						}else if ("cod".equals(fieldName)){
+    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting cod...="+parser.nextToken());
     							status = parser.getIntValue();
-    							if (status != 200) break;
-    						}
-    						
-    						System.out.println("parseJsonOpenWeatherCurrent(): Skipping...="+fieldName+" token="+t);
-    						t=parser.nextToken();
+    							parseStream = false;
+      						}
+
+        					System.out.println("parseJsonOpenWeatherCurrent(): Skipping...="+fieldName+" token="+tok);
+        					System.out.println("Jump to next token...");
+        					tok=parser.nextToken();
     					}
     					
     	            	if (status != 200){
     	            		//401
     	            		System.out.println("parseJsonOpenWeatherCurrent():code="+status+" Invalid API key...");
     	            		System.exit(0);
+    	            	}else {
+    	            		System.out.println("parseJsonOpenWeatherCurrent():code=SUCCESS");
     	            	}
 
     				 }catch(JsonParseException jpe){ 
@@ -395,6 +470,7 @@ public class ParseJson {
  			System.out.println("Stream mode selected");
 			
  			String STATUS;
+ 			
 			URL url = new URL(serviceUrl);
 			JsonFactory jfactory = new JsonFactory();
 			try (   InputStream is = url.openStream();
@@ -405,48 +481,57 @@ public class ParseJson {
 					System.out.println("parseJsonGeoLoc():Entering streaming mode");
 					
 					String fieldName;
-					int parseElem;
-					JsonToken t = null;
+					boolean parseStream;
+					JsonToken tok = null;
 					//Skipping all null at the beginning of stream...
-					while((t=parser.nextToken())!=JsonToken.START_OBJECT) {
+					while((tok=parser.nextToken())!=JsonToken.START_OBJECT) {
 						System.out.println("parseJsonGeoLoc(): Skipping..."+(String)parser.getCurrentName());
 					}
 
-					parseElem =2;STATUS = "OK";
-					//Note: Min value for parseElem is 1 and always parse for "cod"(status),Set number of elements to be parsed, 
-					//if status = 200(Success)then required elements can be parsed, if not it is an error case
-
-					while( parseElem != 0 && STATUS=="OK") {
+					parseStream = true;
+					STATUS = "OK";
+					//exit the streaming once code, status of streaming is found
+					//if cod is success, means required fields are found
+					while( parseStream == true) {
 						fieldName =  parser.getCurrentName();
-						if ("lat".equals(fieldName)) {
-							parseElem--;				
-							System.out.println("parseJsonGeoLoc(): Skipping...="+parser.nextToken());
-							glat = (Double)parser.getDoubleValue();
-							geoObj.setLat(glat.doubleValue());
-						}
-						
-						if ("lng".equals(fieldName)) {
-							parseElem--;				
-							System.out.println("parseJsonGeoLoc(): Skipping...="+parser.nextToken());
-							glon = (Double)parser.getDoubleValue();
-							geoObj.setLon(glon.doubleValue());
-						}
-						
-						if ("status".equals(fieldName)) {
-							parseElem --;
-							parser.nextToken();
-							STATUS = parser.getValueAsString();
-							if (STATUS != "OK") break;
-						}
-						
-						System.out.println("parseJsonGeoLoc(): Skipping...="+fieldName+" token="+t);
-						t=parser.nextToken();
-					}
 					
-	            	if (STATUS != "OK"){
+						if("location".equals(fieldName)) {
+							tok = parser.nextToken();
+							System.out.println("parseJsonGeoLoc(): location="+tok);
+							while(tok != JsonToken.END_OBJECT) {
+								fieldName =  parser.getCurrentName();
+								if ("lat".equals(fieldName)) {
+									System.out.println("parseJsonGeoLoc(): Extracting Status...="+parser.nextToken());
+									glat = (Double)parser.getDoubleValue();
+									System.out.println("parseJsonGeoLoc():Lat="+glat);
+									geoObj.setLat(glat.doubleValue());
+	    						}else if ("lng".equals(fieldName)) {
+	    							System.out.println("parseJsonGeoLoc(): Extracting Status...="+parser.nextToken());
+	    							glon = (Double)parser.getDoubleValue();
+	    							System.out.println("parseJsonGeoLoc():Lng="+glon);
+	    							geoObj.setLon(glon.doubleValue());
+	    						}
+								tok = parser.nextToken();
+							}
+						}
+						else if ("status".equals(fieldName)) {
+							System.out.println("parseJsonGeoLoc(): Extracting Status...="+parser.nextToken());
+							STATUS = (String)parser.getValueAsString();
+							System.out.println("parseJsonGeoLoc():stat="+STATUS);
+							parseStream = false;
+							continue;
+						}
+        				System.out.println("Jump to next token...");
+						tok = parser.nextToken();
+					}
+
+	            	if (!STATUS.equals("OK")){
 	            		//REQ RJECTD
 	            		System.out.println("parseJsonGeoLoc():code="+STATUS+" Invalid API key...");
 	            		System.exit(0);
+	            	}
+	            	else {
+	            		System.out.println("parseJsonGeoLoc():code="+STATUS);
 	            	}
 
 				 }catch(JsonParseException jpe){ 

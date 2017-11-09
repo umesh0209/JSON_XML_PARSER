@@ -3,8 +3,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class OpenWeatherAccess {
-
-
 	public static final String OPEN_WEATHER_URL = 
 			"http://api.openweathermap.org/data/2.5/weather?lat=lat_val&lon=lon_val&units=temp_units&appid=key_id";
 	public static final String OPEN_WEATHER_APP_KEY = "3fca5279c45094c8c4d23b9d13d53d7d";
@@ -65,9 +63,7 @@ public class OpenWeatherAccess {
 			System.exit(0);
 		}     
 	}
-	
 
-	
 	public void extractLocTemp() throws MalformedURLException {
 		System.out.println("extractLocTemp():called");
 		geoObj.extractGeoLoc();
