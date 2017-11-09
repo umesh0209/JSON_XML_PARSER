@@ -24,7 +24,7 @@ public class ParseJson {
 	private int jsonMode;
 	private String serviceUrl;
 	private double temp,temp_max,temp_min,humidity,windSpeed,clouds;
-	private String windUnit;
+	private String windUnit,desc;
 	private GeoLocation geoObj;
 	private String unitSymbol;
 	
@@ -56,6 +56,7 @@ public class ParseJson {
 		serviceUrl=null;
 		temp = temp_max= temp_min = 0.0;
 		clouds = humidity = windSpeed = 0.0;
+		desc=null;
 	}
 	
 	public void setGeoObj(GeoLocation g) {
@@ -70,6 +71,7 @@ public class ParseJson {
 		System.out.println("**********************************************");
 		System.out.println("Temp(CURR)="+temp+unitSymbol+" Temp(MIN)="+temp_min+unitSymbol+" TEMP(MAX)"+temp_max+unitSymbol);
 		System.out.println("Humidity="+humidity+PERCENTAGE+" Winds= "+windSpeed+" "+windUnit+" Clouds="+clouds+PERCENTAGE);
+		System.out.println("Description="+desc);
 		System.out.println("**********************************************");
 	}
 	
@@ -248,6 +250,12 @@ public class ParseJson {
             		System.out.println(winds);
             		t = (Object)winds.get("speed");
             		windSpeed=unboxObjToNum(t);
+            		
+            		JSONArray weather = (JSONArray)currLocReader.get("weather");
+            		JSONObject jObj;
+            		jObj = (JSONObject)weather.get(0);
+            		t = (Object)jObj.get("description");
+            		desc = (String)t.toString();
             	}
             	else{
             		//401
@@ -338,6 +346,22 @@ public class ParseJson {
     	    						}
 	    							tok = parser.nextToken();
     							}
+    						}else if("weather".equals(fieldName)){
+    							JsonToken ind,obj_ind;
+    							tok = parser.nextToken();//JsonToken.START_ARRAY		
+    							for ( ind=tok; ind != JsonToken.END_ARRAY; ind = parser.nextToken()) {
+    								System.out.println("parseJsonOpenWeatherCurrent(): weather="+ind);
+    								for(obj_ind = parser.nextToken(); obj_ind != JsonToken.END_OBJECT; obj_ind = parser.nextToken()){
+    									fieldName = parser.getCurrentName();
+    									System.out.println("parseJsonOpenWeatherCurrent(): weather_obj="+obj_ind+" name="+fieldName);
+    									if("description".equals(fieldName)) {
+    										System.out.println("parseJsonOpenWeatherCurrent(): Extracting description...="+parser.nextToken());
+    										desc = parser.getText();
+    									}
+    								}
+    							}
+    							tok = ind;
+    							System.out.println("parseJsonOpenWeatherCurrent(): weather="+ind);
     						}else if ("cod".equals(fieldName)){
     							System.out.println("parseJsonOpenWeatherCurrent(): Extracting cod...="+parser.nextToken());
     							status = parser.getIntValue();
