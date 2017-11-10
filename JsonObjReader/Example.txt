@@ -239,8 +239,10 @@ Jump to next token...END_OBJECT
 parseJsonOpenWeatherCurrent(): Skipping...=bounds token=END_OBJECT
 Jump to next token...FIELD_NAME
 parseJsonGeoLoc(): location=START_OBJECT
+parseJsonGeoLoc(): location=FIELD_NAME
 parseJsonGeoLoc(): Extracting Status...=VALUE_NUMBER_FLOAT
 parseJsonGeoLoc():Lat=45.5016889
+parseJsonGeoLoc(): location=FIELD_NAME
 parseJsonGeoLoc(): Extracting Status...=VALUE_NUMBER_FLOAT
 parseJsonGeoLoc():Lng=-73.567256
 parseJsonOpenWeatherCurrent(): Skipping...=lng token=END_OBJECT
@@ -352,9 +354,15 @@ Jump to next token...VALUE_STRING
 parseJsonOpenWeatherCurrent(): Skipping...=base token=VALUE_STRING
 Jump to next token...FIELD_NAME
 parseJsonOpenWeatherCurrent(): main=START_OBJECT
-parseJsonOpenWeatherCurrent(): Extracting temp...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): main=FIELD_NAME
+parseJsonOpenWeatherCurrent(): Extracting temp...=VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): main=FIELD_NAME
+parseJsonOpenWeatherCurrent(): main=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): main=FIELD_NAME
 parseJsonOpenWeatherCurrent(): Extracting humidity...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): main=FIELD_NAME
 parseJsonOpenWeatherCurrent(): Extracting temp_min...=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): main=FIELD_NAME
 parseJsonOpenWeatherCurrent(): Extracting temp_max...=VALUE_NUMBER_INT
 parseJsonOpenWeatherCurrent(): Skipping...=temp_max token=END_OBJECT
 Jump to next token...FIELD_NAME
@@ -363,10 +371,16 @@ Jump to next token...VALUE_NUMBER_INT
 parseJsonOpenWeatherCurrent(): Skipping...=visibility token=VALUE_NUMBER_INT
 Jump to next token...FIELD_NAME
 parseJsonOpenWeatherCurrent(): wind=START_OBJECT
+parseJsonOpenWeatherCurrent(): wind=FIELD_NAME
 parseJsonOpenWeatherCurrent(): Extracting wind speed...=VALUE_NUMBER_FLOAT
-parseJsonOpenWeatherCurrent(): Skipping...=deg token=END_OBJECT
+parseJsonOpenWeatherCurrent(): wind=FIELD_NAME
+parseJsonOpenWeatherCurrent(): wind=VALUE_NUMBER_INT
+parseJsonOpenWeatherCurrent(): wind=FIELD_NAME
+parseJsonOpenWeatherCurrent(): wind=VALUE_NUMBER_FLOAT
+parseJsonOpenWeatherCurrent(): Skipping...=gust token=END_OBJECT
 Jump to next token...FIELD_NAME
 parseJsonOpenWeatherCurrent(): cloud=START_OBJECT
+parseJsonOpenWeatherCurrent(): cloud=FIELD_NAME
 parseJsonOpenWeatherCurrent(): Extracting clouds...=VALUE_NUMBER_INT
 parseJsonOpenWeatherCurrent(): Skipping...=all token=END_OBJECT
 Jump to next token...FIELD_NAME
@@ -418,7 +432,7 @@ Jump to next token...END_OBJECT
 parseJsonOpenWeatherCurrent():code=SUCCESS
 parseJsonOpenWeatherCurrent():Stream mode exiting...
 **********************************************
-Temp(CURR)=6.0Â°C Temp(MIN)=6.0Â°C TEMP(MAX)6.0Â°C
-Humidity=56.0% Winds= 5.7 meters/sec Clouds=90.0%
-Description=overcast clouds
+Temp(CURR)=6.66°C Temp(MIN)=6.0°C TEMP(MAX)7.0°C
+Humidity=79.0% Winds= 7.7 meters/sec Clouds=90.0%
+Description=light rain
 **********************************************

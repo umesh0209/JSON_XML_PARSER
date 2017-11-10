@@ -305,9 +305,8 @@ public class ParseJson {
     					while( parseStream == true) {
     						fieldName =  parser.getCurrentName();
     						if ("main".equals(fieldName)) {
-    							tok = parser.nextToken();
-    							System.out.println("parseJsonOpenWeatherCurrent(): main="+tok);
-    							while (tok != JsonToken.END_OBJECT) {
+    							for(tok=parser.nextToken(); tok != JsonToken.END_OBJECT; tok = parser.nextToken()) {
+    								System.out.println("parseJsonOpenWeatherCurrent(): main="+tok);
     								fieldName =  parser.getCurrentName();
     								if ("temp".equals(fieldName)) {
      	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting temp...="+parser.nextToken());
@@ -322,35 +321,30 @@ public class ParseJson {
     	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting humidity...="+parser.nextToken());
     	    							humidity = parser.getDoubleValue();
     	    						}
-	    							tok = parser.nextToken();
     							}
     						}else if("wind".equals(fieldName)) {
-    							tok = parser.nextToken();
-    							System.out.println("parseJsonOpenWeatherCurrent(): wind="+tok);
-    							while(tok != JsonToken.END_OBJECT) {
+    							for(tok = parser.nextToken();tok != JsonToken.END_OBJECT;tok = parser.nextToken()) {
+    								System.out.println("parseJsonOpenWeatherCurrent(): wind="+tok);
     								fieldName =  parser.getCurrentName();
     								if ("speed".equals(fieldName)) {
     	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting wind speed...="+parser.nextToken());
     	    							windSpeed = parser.getDoubleValue();
     	    						}
-	    							tok = parser.nextToken();
     							}
     						}else if ("clouds".equals(fieldName)) {
-       							tok = parser.nextToken();
-       							System.out.println("parseJsonOpenWeatherCurrent(): cloud="+tok);
-    							while(tok != JsonToken.END_OBJECT) {
+     							for(tok = parser.nextToken();tok != JsonToken.END_OBJECT;tok = parser.nextToken()) {
+    								System.out.println("parseJsonOpenWeatherCurrent(): cloud="+tok);
     								fieldName =  parser.getCurrentName();
     								if ("all".equals(fieldName)) {
     	    							System.out.println("parseJsonOpenWeatherCurrent(): Extracting clouds...="+parser.nextToken());
     	    							clouds = parser.getDoubleValue();
     	    						}
-	    							tok = parser.nextToken();
     							}
     						}else if("weather".equals(fieldName)){
-    							JsonToken ind,obj_ind;
+    							JsonToken obj_ind;
     							tok = parser.nextToken();//JsonToken.START_ARRAY		
-    							for ( ind=tok; ind != JsonToken.END_ARRAY; ind = parser.nextToken()) {
-    								System.out.println("parseJsonOpenWeatherCurrent(): weather="+ind);
+    							for ( ; tok != JsonToken.END_ARRAY; tok = parser.nextToken()) {
+    								System.out.println("parseJsonOpenWeatherCurrent(): weather="+tok);
     								for(obj_ind = parser.nextToken(); obj_ind != JsonToken.END_OBJECT; obj_ind = parser.nextToken()){
     									fieldName = parser.getCurrentName();
     									System.out.println("parseJsonOpenWeatherCurrent(): weather_obj="+obj_ind+" name="+fieldName);
@@ -360,8 +354,7 @@ public class ParseJson {
     									}
     								}
     							}
-    							tok = ind;
-    							System.out.println("parseJsonOpenWeatherCurrent(): weather="+ind);
+    							System.out.println("parseJsonOpenWeatherCurrent(): weather="+tok);
     						}else if ("cod".equals(fieldName)){
     							System.out.println("parseJsonOpenWeatherCurrent(): Extracting cod...="+parser.nextToken());
     							status = parser.getIntValue();
@@ -518,12 +511,11 @@ public class ParseJson {
 					//if cod is success, means required fields are found
 					while( parseStream == true) {
 						fieldName =  parser.getCurrentName();
-					
 						if("location".equals(fieldName)) {
-							tok = parser.nextToken();
-							System.out.println("parseJsonGeoLoc(): location="+tok);
-							while(tok != JsonToken.END_OBJECT) {
+							tok = parser.nextToken();		
+							for(;tok != JsonToken.END_OBJECT;tok = parser.nextToken()) {
 								fieldName =  parser.getCurrentName();
+								System.out.println("parseJsonGeoLoc(): location="+tok);
 								if ("lat".equals(fieldName)) {
 									System.out.println("parseJsonGeoLoc(): Extracting Status...="+parser.nextToken());
 									glat = (Double)parser.getDoubleValue();
@@ -535,7 +527,6 @@ public class ParseJson {
 	    							System.out.println("parseJsonGeoLoc():Lng="+glon);
 	    							geoObj.setLon(glon.doubleValue());
 	    						}
-								tok = parser.nextToken();
 							}
 						}
 						else if ("status".equals(fieldName)) {
