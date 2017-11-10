@@ -9,3 +9,10 @@ Sydney NewSouthWales AUS.
 
 As Lat/Lon provides accurate data,the city, is sent to Google GeoCode, to extract Lat/Lon, which are passed to 
 Open weather to get the current weather.
+
+Output looks like:
+**********************************************
+Temp(CURR)=6.0°C Temp(MIN)=6.0°C TEMP(MAX)6.0°C
+Humidity=56.0% Winds= 5.7 meters/sec Clouds=90.0%
+Description=overcast clouds
+**********************************************
