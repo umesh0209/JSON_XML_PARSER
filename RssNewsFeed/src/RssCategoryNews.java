@@ -147,7 +147,7 @@ public class RssCategoryNews {
 			Node cNode = iList.item(i);
 			titleVal = linkVal = descVal = null;
 			if (cNode == null) {
-				//If node present continue to next item
+				//If no node present continue to next item
 				continue;
 			}
 			if (cNode instanceof Element) {
@@ -249,7 +249,7 @@ public class RssCategoryNews {
 					System.out.println(RSSCATNEWS+".domParser():Element["+i+"]="+n.getNodeName());
 					if (n.getNodeName().equals("channel")) {
 						extractChannelChildItems(n);
-					}//endif
+					}//end if
 				}//end if
 		    }//end for			
 		}catch(ParserConfigurationException pce) {

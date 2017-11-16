@@ -5,8 +5,9 @@ import java.util.ListIterator;
 public class ItemsListDB {
 	
 	private final String ITEMSLIST = this.getClass().getSimpleName();
-	List <NewsItem> itemsLst;
-	NewsItem item;
+	private List <NewsItem> itemsLst;
+	@SuppressWarnings("unused")
+	private NewsItem item;
 	
 	private static ItemsListDB instance=null;
 	
