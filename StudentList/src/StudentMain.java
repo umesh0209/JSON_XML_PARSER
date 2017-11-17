@@ -6,11 +6,9 @@ public class StudentMain {
 		Student boys = Student.BOYS;
 		Student girls = Student.GIRLS;
 	
-		boys.createList();
 		boys.add("Umesh", 20);
 		boys.add("Chai", 10);
 
-		girls.createList();
 		girls.add("Mahima", 18);
 		girls.add("Tanya", 18);
 		
