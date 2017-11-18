@@ -13,20 +13,86 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class DomParser {
+interface DomFunctions {
+	
+	public void parseXML();
+	public void getXML();
+	public void makeURL(String cat);
+}
+
+public class DomParser implements DomFunctions {
 	
 	private final String DOMPARSER = this.getClass().getSimpleName();
 	private final String SORRY_INFO="########Sorry, No details found, please check the link ######";
 	private final String SORRY_LINK="########Sorry, No link found please go to https://www.cbsnews.com/ ######";
 	private ItemsListDB itemsDB;
+	private String fileName;
+	private String url;
 	
 	public DomParser() {
-		// TODO Auto-generated constructor stub
 		itemsDB = ItemsListDB.getinstance();
-		
+		url = RssCategoryNews.CBS_RSS_URL;
+		fileName = RssCategoryNews.CBS_NEWS_RSS_FNAME;
 	}
 	
-	public void parseXML(String fileName) {
+	@Override
+	public void makeURL(String cat) {
+		System.out.println(DOMPARSER+".makeURL():called");
+		switch(cat){
+			case RssCategoryNews.CAT_WORLD:{
+				if (url.contains("category")) {
+					url = url.replace("category", RssCategoryNews.CAT_WORLD);
+					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
+				}
+			}
+			break;
+			
+			case RssCategoryNews.CAT_SCITECH:{
+				if (url.contains("category")) {
+					url = url.replace("category", RssCategoryNews.CAT_SCITECH);
+					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);			
+				}
+			}
+			break;
+			
+			case RssCategoryNews.CAT_GAMECORE:{
+				if (url.contains("category")) {
+					url = url.replace("category", RssCategoryNews.CAT_GAMECORE);
+					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
+				}
+			}
+			break;
+			
+			case RssCategoryNews.CAT_TOPSTORIES:{
+				if (url.contains("category")) {
+					url = url.replace("category", RssCategoryNews.CAT_TOPSTORIES);
+					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
+				}
+			}
+			break;
+			
+			default:
+				break;
+		}//end switch(cat)
+	}//end makeUrl()
+	
+	@Override
+	public void getXML() {
+		System.out.println(DOMPARSER+".getXML():called");
+		
+		HttpHandler sh = new HttpHandler();
+		// Making a request to url and getting response
+		try {
+			sh.setFileName(fileName);
+			sh.makeServiceCall(url);
+			}catch(IOException ie){
+				System.out.println(ie.getMessage());
+				System.exit(0);
+			}
+	}//end getXML()
+	
+	@Override
+	public void parseXML() {
 		System.out.println(DOMPARSER+".parseXML():called");
 		//Get the DOM Builder Factory
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -159,4 +225,7 @@ public class DomParser {
 			}//end if
 		}// end for
 	}//end of extractChannelChildItems()
+
+
+
 }
