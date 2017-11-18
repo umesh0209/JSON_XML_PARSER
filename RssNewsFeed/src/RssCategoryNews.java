@@ -1,18 +1,5 @@
-import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-import static org.w3c.dom.Node.*;
 
 public class RssCategoryNews {
 	private final String RSSCATNEWS = this.getClass().getSimpleName();
@@ -30,15 +17,15 @@ public class RssCategoryNews {
 	private String cat;
 	private String fileName;
 	private ItemsListDB itemsDB;
+	private DomParser dom=null;
 	
 	public static final String CBS_NEWS_RSS_FNAME = "xml/newsrss.xml";
-	private final String SORRY_INFO="########Sorry, No details found, please check the link ######";
-	private final String SORRY_LINK="########Sorry, No link found please go to https://www.cbsnews.com/ ######";
-	
+
 	public RssCategoryNews() {
 		System.out.println(RSSCATNEWS+"():Object Creation");
 		url = cat = fileName = null;
 		itemsDB = ItemsListDB.getinstance();
+		dom = new DomParser();
 	}//end RssCategoryNews()
 	
 	public void setCategory() {
@@ -120,6 +107,16 @@ public class RssCategoryNews {
 		}//end switch(cat)
 	}//end makeUrl()
 	
+	public String getFileName() {
+		System.out.println(RSSCATNEWS+".getFileName():called");
+		return fileName;
+	}
+	
+	public void setFileName(String fName) {
+		System.out.println(RSSCATNEWS+".setFileName():called");
+		this.fileName = fName;
+	}
+	
 	public void getXML() {
 		System.out.println(RSSCATNEWS+".getXML():called");
 		
@@ -134,135 +131,10 @@ public class RssCategoryNews {
 			}
 	}//end getXML()
 	
-	private void extractAllItems(Node item) {
-		System.out.println(RSSCATNEWS+".extractAllItems():called");
-		
-		NodeList iList = item.getChildNodes();
-		int iLength = iList.getLength();
-		System.out.println(RSSCATNEWS+".extractAllItems():iLength="+iLength);
-
-		for(int i=0; i<iLength;i++) {
-			String titleVal, linkVal, descVal;
-			boolean instanceFound=false;
-			Node cNode = iList.item(i);
-			titleVal = linkVal = descVal = null;
-			if (cNode == null) {
-				//If no node present continue to next item
-				continue;
-			}
-			if (cNode instanceof Element) {
-				//String content = cNode.getLastChild().getTextContent().trim();
-			
-				switch(cNode.getNodeName()) {		
-				case "title":{
-					System.out.println(RSSCATNEWS+".extractAllItems():title found");
-					instanceFound = true;
-					Node lastChild = cNode.getLastChild();
-					//check if last child is present(text)
-					if (lastChild == null) {
-						titleVal = SORRY_INFO;
-					}
-					else {
-						titleVal = lastChild.getTextContent().trim();
-					}
-				}
-				break;
-				
-				case "link":{
-					System.out.println(RSSCATNEWS+".extractAllItems():link found");
-					instanceFound = true;
-					Node lastChild = cNode.getLastChild();
-					if (lastChild == null) {
-						linkVal = SORRY_LINK;
-					}
-					else {
-						linkVal = lastChild.getTextContent().trim();
-					}
-				}
-				break;
-				
-				case "description":{
-					System.out.println(RSSCATNEWS+".extractAllItems():description found");
-					instanceFound = true;
-					Node lastChild = cNode.getLastChild();
-					if (lastChild == null) {
-						descVal = SORRY_INFO;
-					}
-					else {
-						descVal = lastChild.getTextContent().trim();
-					}
-				}
-				break;
-				
-				default: 
-					break;
-				}
-				
-				if ( instanceFound ) {
-					//if element found then add it to the list
-					NewsItem newsch = itemsDB.getNewsItem();
-					newsch.setTitle(titleVal);
-					newsch.setLink(linkVal);
-					newsch.setDescription(descVal);
-					itemsDB.addToList(newsch);
-					instanceFound = false;
-				}			
-			}//end switch
-		}// end of if(cNode instanceof Element)
-	}//extractAllItems()
-	
-	private void extractChannelChildItems(Node node) {
-		System.out.println(RSSCATNEWS+".extractChannelChildItems():called");
-		
-		NodeList nList = node.getChildNodes();
-		int nLength = nList.getLength();
-		System.out.println(RSSCATNEWS+".extractChannelChildItems():nLength="+nLength);
-		for(int i=0; i<nLength;i++) {
-			Node item = nList.item(i);
-			if ((item instanceof Element) && item.getNodeName().equals("item")) {
-				extractAllItems(item);
-			}//end if
-		}// end for
-	}//end of extractChannelChildItems()
-	
 	public void domParser() {
 		System.out.println(RSSCATNEWS+".domParser():called");
-		//Get the DOM Builder Factory
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	
-		try {
-			//Get DOM builder
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			//Load and parser XML, document contains the entire XML as a tree
-			System.out.println(RSSCATNEWS+".domParser():set filename="+fileName);
-			
-			Document document = builder.parse(new File(fileName));
-			//Normalize the XML Structure; It's just too important !!
-			document.getDocumentElement().normalize();
-			
-			//Here comes the root node"
-			Element root = (Element) document.getDocumentElement();
-			NodeList nList = root.getChildNodes();
-			for(int i=0; i<nList.getLength(); i++) {
-				Node n = nList.item(i);
-				if (n.getNodeType() == ELEMENT_NODE) {
-					System.out.println(RSSCATNEWS+".domParser():Element["+i+"]="+n.getNodeName());
-					if (n.getNodeName().equals("channel")) {
-						extractChannelChildItems(n);
-					}//end if
-				}//end if
-		    }//end for			
-		}catch(ParserConfigurationException pce) {
-			pce.printStackTrace();
-			System.exit(0);
-		}catch ( IOException ie) {
-			ie.printStackTrace();
-			System.exit(0);
-		}catch( SAXException saxe) {
-			saxe.printStackTrace();
-			System.exit(0);
-		}
-	}//end domParser()
+		dom.parseXML(fileName);
+	}
 	
 	public void displayItems() {
 		System.out.println(RSSCATNEWS+".displayItems():called");
