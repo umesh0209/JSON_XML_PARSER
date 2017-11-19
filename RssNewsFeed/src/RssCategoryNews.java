@@ -53,7 +53,7 @@ public class RssCategoryNews {
 		dom.getXML();
 	}//end getXML()
 	
-	public void domParser() {
+	public void parsingXML() {
 		System.out.println(RSSCATNEWS+".domParser():called");
 		dom.parseXML();
 	}

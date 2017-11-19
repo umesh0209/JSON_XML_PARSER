@@ -11,7 +11,7 @@ public class CbsRss {
 		cbsRssObj.setCategory();
 		cbsRssObj.makeUrl();
 		cbsRssObj.getXML();
-		cbsRssObj.domParser();
+		cbsRssObj.parsingXML();
 		cbsRssObj.displayItems();
 	}
 }
