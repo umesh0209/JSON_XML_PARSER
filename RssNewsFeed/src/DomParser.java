@@ -2,6 +2,7 @@ import static org.w3c.dom.Node.ELEMENT_NODE;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,67 +14,69 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-interface DomFunctions {
+abstract class DomFunctions implements IDomFunctions{
+	public abstract void parseXML();
+	public abstract void getXML();
+	public abstract void makeURL();
 	
-	public void parseXML();
-	public void getXML();
-	public void makeURL(String cat);
+	//Empty implementations
+	public void setCatList(Map<Integer,CategoryDetails> c) {}
+	public void setCategory(int c) {}
 }
 
-public class DomParser implements DomFunctions {
+public class DomParser extends DomFunctions {
 	
 	private final String DOMPARSER = this.getClass().getSimpleName();
 	private final String SORRY_INFO="########Sorry, No details found, please check the link ######";
 	private final String SORRY_LINK="########Sorry, No link found please go to https://www.cbsnews.com/ ######";
 	private ItemsListDB itemsDB;
-	private String fileName;
+	private Map<Integer,CategoryDetails> cList=null;
+	private int cat;
+
 	private String url;
+	private String fileName;
 	
 	public DomParser() {
-		itemsDB = ItemsListDB.getinstance();
 		url = RssCategoryNews.CBS_RSS_URL;
-		fileName = RssCategoryNews.CBS_NEWS_RSS_FNAME;
+		fileName = null;
 	}
 	
 	@Override
-	public void makeURL(String cat) {
+	public void setCatList(Map<Integer,CategoryDetails> c) {
+		System.out.println(DOMPARSER+".setCatList():called");
+		cList = c;
+	}
+	
+	@Override
+	public void setCategory(int c) {
+		System.out.println(DOMPARSER+".setCategory():called");
+		cat = c;
+	}
+	
+	@Override
+	public void makeURL() {
 		System.out.println(DOMPARSER+".makeURL():called");
-		switch(cat){
-			case RssCategoryNews.CAT_WORLD:{
-				if (url.contains("category")) {
-					url = url.replace("category", RssCategoryNews.CAT_WORLD);
-					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
-				}
-			}
-			break;
+		
+		System.out.println(DOMPARSER+".makeURL():Extract category string");
+		String catVal = cList.get(cat).getCategory();
+		System.out.println(DOMPARSER+".makeURL():User selected:"+ catVal);
+		
+		System.out.println(DOMPARSER+".makeURL():Extract filename");
+		fileName = cList.get(cat).getfName();
+		
+		System.out.println(DOMPARSER+".makeURL():create items DB list");
+		itemsDB = cList.get(cat).getItemsDB();
+		
+		System.out.println(DOMPARSER+".makeURL():set url");
+		url = RssCategoryNews.CBS_RSS_URL;
 			
-			case RssCategoryNews.CAT_SCITECH:{
-				if (url.contains("category")) {
-					url = url.replace("category", RssCategoryNews.CAT_SCITECH);
-					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);			
-				}
-			}
-			break;
-			
-			case RssCategoryNews.CAT_GAMECORE:{
-				if (url.contains("category")) {
-					url = url.replace("category", RssCategoryNews.CAT_GAMECORE);
-					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
-				}
-			}
-			break;
-			
-			case RssCategoryNews.CAT_TOPSTORIES:{
-				if (url.contains("category")) {
-					url = url.replace("category", RssCategoryNews.CAT_TOPSTORIES);
-					System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
-				}
-			}
-			break;
-			
-			default:
-				break;
-		}//end switch(cat)
+		if (url.contains("category")) {
+			url = url.replace("category", catVal);
+			System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
+		}
+		
+		System.out.println(DOMPARSER+".makeURL():create items DB list");
+		itemsDB.createList();
 	}//end makeUrl()
 	
 	@Override
@@ -82,6 +85,7 @@ public class DomParser implements DomFunctions {
 		
 		HttpHandler sh = new HttpHandler();
 		// Making a request to url and getting response
+		
 		try {
 			sh.setFileName(fileName);
 			sh.makeServiceCall(url);
@@ -225,7 +229,4 @@ public class DomParser implements DomFunctions {
 			}//end if
 		}// end for
 	}//end of extractChannelChildItems()
-
-
-
 }

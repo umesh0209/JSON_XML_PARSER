@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class RssCategoryNews {
@@ -6,22 +8,14 @@ public class RssCategoryNews {
 	public static final String CBS_RSS_URL = 
 			"https://www.cbsnews.com/latest/rss/category";
 	
-	/* News Categories */
-	public static final String CAT_WORLD = "world";
-	public static final String CAT_SCITECH="tech";
-	public static final String CAT_GAMECORE="scitech-gamecore";
-	public static final String CAT_TOPSTORIES="main";
-	
 	private String cat;
 	private ItemsListDB itemsDB;
-	private DomParser dom=null;
+	private IDomFunctions dom=null;
+	private Map<Integer, CategoryDetails> catList = new HashMap<>();
 	
-	public static final String CBS_NEWS_RSS_FNAME = "xml/newsrss.xml";
-
 	public RssCategoryNews() {
 		System.out.println(RSSCATNEWS+"():Object Creation");
 		cat = null;
-		itemsDB = ItemsListDB.getinstance();
 		dom = new DomParser();
 	}//end RssCategoryNews()
 	
@@ -37,38 +31,20 @@ public class RssCategoryNews {
 		int type = scan.nextInt();
 		scan.close();
 		
-		switch(type) {
-			case 1:
-			{
-				this.cat = CAT_WORLD;
-			}
-			break;
-			
-			case 2:{
-				this.cat = CAT_SCITECH;
-			}
-			break;
-			
-			case 3:{
-				this.cat = CAT_GAMECORE;
-			}
-			break;
-			
-			case 4:{
-				this.cat = CAT_TOPSTORIES;
-			}
-			break;
-			
-			default:{
-				System.out.println("Wrong input, try again");
-				System.exit(0);
-			}
-		}//end switch
+		if (type <0 || type > 5) {
+			System.out.println(RSSCATNEWS+"..setCategory()Wrong input, try again");
+			System.exit(0);
+		}
+		
+		createCatList();
+		dom.setCatList(catList);
+		dom.setCategory(type);
+		itemsDB = catList.get(type).getItemsDB();
 	}//end setCategory()
 	
 	public void makeUrl() {
 		System.out.println(RSSCATNEWS+".makeUrl():called");
-		dom.makeURL(cat);
+		dom.makeURL();
 
 	}//end makeUrl()
 	
@@ -87,4 +63,17 @@ public class RssCategoryNews {
 		System.out.println("**************************************CBS NEWS*******************************");
 		itemsDB.display();
 	}//end displayItems()
+	
+	/****************************************************************************************
+	 *                                  PRIVATE FUNCTIONS                                   *
+	 ****************************************************************************************/
+	
+	private void createCatList() {
+		System.out.println(RSSCATNEWS+".createCatList() called");
+		catList.put(1, new CategoryDetails("world",ItemsListDB.WORLD,"xml/newsrss.xml"));
+		catList.put(2, new CategoryDetails("tech",ItemsListDB.TECH,"xml/newsrss.xml"));
+		catList.put(3, new CategoryDetails("scitech-gamecore",ItemsListDB.SPORTS,"xml/newsrss.xml"));
+		catList.put(3, new CategoryDetails("main",ItemsListDB.TOPSTORY,"xml/newsrss.xml"));
+	}
+
 }

@@ -2,40 +2,25 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class ItemsListDB {
+public enum ItemsListDB {
+	WORLD, TECH, SPORTS, TOPSTORY;
 	
-	private final String ITEMSLIST = this.getClass().getSimpleName();
-	private List <NewsItem> itemsLst;
+	private List <NewsItem> itemsLst=null;
 	@SuppressWarnings("unused")
 	private NewsItem item;
-	
-	private static ItemsListDB instance=null;
-	
-	public synchronized static ItemsListDB getinstance() {
-		System.out.println("ItemsListDB: Instance creation");
-		if (instance == null) {
-			instance = new ItemsListDB();
-		}
-		return instance;
-	}
-	
-	/*public enum instance{
-		
-	}*/
-	
-	private ItemsListDB() {
-		System.out.println(ITEMSLIST+"(): Object creation");
+
+	public void createList() {
+		System.out.println("ItemsListDB.createList():called");
 		itemsLst = new LinkedList<NewsItem>();
-		item = null;
 	}
 	
 	public NewsItem getNewsItem() {
-		System.out.println(ITEMSLIST+".getNewsItem():get an element to be added to the list");
+		System.out.println("ItemsListDB.getNewsItem():get an element to be added to the list");
 		return new NewsItem();
 	}
 	
 	public void addToList(NewsItem n) {
-		System.out.println(ITEMSLIST+".getNewsItem():add the item to the list");
+		System.out.println("ItemsListDB.getNewsItem():add the item to the list");
 		itemsLst.add(n);
 	}
 	
