@@ -1,9 +1,9 @@
 import java.util.Map;
 
-public interface IDomFunctions {
+public interface IXmlFunctions {
 	
 	//These functions are implemented by DomParser class
-	public void parseXML();
+	public void parseDOM();
 	public void getXML();
 	public void makeURL();
 	public void setCatList(Map<Integer,CategoryDetails> c);

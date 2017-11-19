@@ -10,13 +10,13 @@ public class RssCategoryNews {
 	
 	private String cat;
 	private ItemsListDB itemsDB;
-	private IDomFunctions dom=null;
+	private IXmlFunctions dom=null;
 	private Map<Integer, CategoryDetails> catList = new HashMap<>();
 	
 	public RssCategoryNews() {
 		System.out.println(RSSCATNEWS+"():Object Creation");
 		cat = null;
-		dom = new DomParser();
+		dom = new XmlParser();
 	}//end RssCategoryNews()
 	
 	public String getCategory() {
@@ -55,7 +55,7 @@ public class RssCategoryNews {
 	
 	public void parsingXML() {
 		System.out.println(RSSCATNEWS+".domParser():called");
-		dom.parseXML();
+		dom.parseDOM();
 	}
 	
 	public void displayItems() {
@@ -75,5 +75,4 @@ public class RssCategoryNews {
 		catList.put(3, new CategoryDetails("scitech-gamecore",ItemsListDB.SPORTS,"xml/newsrss.xml"));
 		catList.put(3, new CategoryDetails("main",ItemsListDB.TOPSTORY,"xml/newsrss.xml"));
 	}
-
 }

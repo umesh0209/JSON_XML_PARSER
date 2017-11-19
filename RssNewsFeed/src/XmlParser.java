@@ -14,8 +14,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-abstract class DomFunctions implements IDomFunctions{
-	public abstract void parseXML();
+abstract class XmlFunctions implements IXmlFunctions{
+	protected Map<Integer,CategoryDetails> cList=null;
+	
+	public abstract void parseDOM();
 	public abstract void getXML();
 	public abstract void makeURL();
 	
@@ -24,64 +26,63 @@ abstract class DomFunctions implements IDomFunctions{
 	public void setCategory(int c) {}
 }
 
-public class DomParser extends DomFunctions {
+public class XmlParser extends XmlFunctions {
 	
-	private final String DOMPARSER = this.getClass().getSimpleName();
+	private final String XMLPARSER = this.getClass().getSimpleName();
 	private final String SORRY_INFO="########Sorry, No details found, please check the link ######";
 	private final String SORRY_LINK="########Sorry, No link found please go to https://www.cbsnews.com/ ######";
+	
 	private ItemsListDB itemsDB;
-	private Map<Integer,CategoryDetails> cList=null;
 	private int cat;
-
 	private String url;
 	private String fileName;
 	
-	public DomParser() {
+	public XmlParser() {
 		url = RssCategoryNews.CBS_RSS_URL;
 		fileName = null;
 	}
 	
 	@Override
 	public void setCatList(Map<Integer,CategoryDetails> c) {
-		System.out.println(DOMPARSER+".setCatList():called");
+		System.out.println(XMLPARSER+".setCatList():called");
 		cList = c;
 	}
 	
 	@Override
 	public void setCategory(int c) {
-		System.out.println(DOMPARSER+".setCategory():called");
+		System.out.println(XMLPARSER+".setCategory():called");
 		cat = c;
 	}
 	
 	@Override
 	public void makeURL() {
-		System.out.println(DOMPARSER+".makeURL():called");
+		System.out.println(XMLPARSER+".makeURL():called");
 		
-		System.out.println(DOMPARSER+".makeURL():Extract category string");
+		System.out.println(XMLPARSER+".makeURL():Extract category string");
 		String catVal = cList.get(cat).getCategory();
-		System.out.println(DOMPARSER+".makeURL():User selected:"+ catVal);
+		System.out.println(XMLPARSER+".makeURL():User selected:"+ catVal);
 		
-		System.out.println(DOMPARSER+".makeURL():Extract filename");
+		System.out.println(XMLPARSER+".makeURL():Extract filename");
 		fileName = cList.get(cat).getfName();
 		
-		System.out.println(DOMPARSER+".makeURL():create items DB list");
+		System.out.println(XMLPARSER+".makeURL():create items DB list");
 		itemsDB = cList.get(cat).getItemsDB();
 		
-		System.out.println(DOMPARSER+".makeURL():set url");
+		System.out.println(XMLPARSER+".makeURL():set url");
 		url = RssCategoryNews.CBS_RSS_URL;
 			
 		if (url.contains("category")) {
 			url = url.replace("category", catVal);
-			System.out.println(DOMPARSER+".makeUrl():url replaced by category+"+url);
+			System.out.println(XMLPARSER+".makeUrl():url replaced by category+"+url);
 		}
 		
-		System.out.println(DOMPARSER+".makeURL():create items DB list");
+		System.out.println(XMLPARSER+".makeURL():create items DB list");
 		itemsDB.createList();
 	}//end makeUrl()
 	
 	@Override
 	public void getXML() {
-		System.out.println(DOMPARSER+".getXML():called");
+		System.out.println(XMLPARSER+".getXML():called");
 		
 		HttpHandler sh = new HttpHandler();
 		// Making a request to url and getting response
@@ -96,8 +97,8 @@ public class DomParser extends DomFunctions {
 	}//end getXML()
 	
 	@Override
-	public void parseXML() {
-		System.out.println(DOMPARSER+".parseXML():called");
+	public void parseDOM() {
+		System.out.println(XMLPARSER+".parseDOM():called");
 		//Get the DOM Builder Factory
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	
@@ -105,7 +106,7 @@ public class DomParser extends DomFunctions {
 			//Get DOM builder
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			//Load and parser XML, document contains the entire XML as a tree
-			System.out.println(DOMPARSER+".parseXML():set filename="+fileName);
+			System.out.println(XMLPARSER+".parseDOM():set filename="+fileName);
 			
 			Document document = builder.parse(new File(fileName));
 			//Normalize the XML Structure; It's just too important !!
@@ -117,7 +118,7 @@ public class DomParser extends DomFunctions {
 			for(int i=0; i<nList.getLength(); i++) {
 				Node n = nList.item(i);
 				if (n.getNodeType() == ELEMENT_NODE) {
-					System.out.println(DOMPARSER+".parseXML():Element["+i+"]="+n.getNodeName());
+					System.out.println(XMLPARSER+".parseDOM():Element["+i+"]="+n.getNodeName());
 					if (n.getNodeName().equals("channel")) {
 						extractChannelChildItems(n);
 					}//end if
@@ -133,18 +134,18 @@ public class DomParser extends DomFunctions {
 			saxe.printStackTrace();
 			System.exit(0);
 		}
-	}//end parseXML()
+	}//end parseDOM()
 	
 	
 	/*************************************************************************************
 	 *                                 PRIVATE FUNCTIONS                                 *
 	 ************************************************************************************/                              
 	private void extractAllItems(Node item) {
-		System.out.println(DOMPARSER+".extractAllItems():called");
+		System.out.println(XMLPARSER+".extractAllItems():called");
 		
 		NodeList iList = item.getChildNodes();
 		int iLength = iList.getLength();
-		System.out.println(DOMPARSER+".extractAllItems():iLength="+iLength);
+		System.out.println(XMLPARSER+".extractAllItems():iLength="+iLength);
 
 		for(int i=0; i<iLength;i++) {
 			String titleVal, linkVal, descVal;
@@ -160,7 +161,7 @@ public class DomParser extends DomFunctions {
 			
 				switch(cNode.getNodeName()) {		
 				case "title":{
-					System.out.println(DOMPARSER+".extractAllItems():title found");
+					System.out.println(XMLPARSER+".extractAllItems():title found");
 					instanceFound = true;
 					Node lastChild = cNode.getLastChild();
 					//check if last child is present(text)
@@ -174,7 +175,7 @@ public class DomParser extends DomFunctions {
 				break;
 				
 				case "link":{
-					System.out.println(DOMPARSER+".extractAllItems():link found");
+					System.out.println(XMLPARSER+".extractAllItems():link found");
 					instanceFound = true;
 					Node lastChild = cNode.getLastChild();
 					if (lastChild == null) {
@@ -187,7 +188,7 @@ public class DomParser extends DomFunctions {
 				break;
 				
 				case "description":{
-					System.out.println(DOMPARSER+".extractAllItems():description found");
+					System.out.println(XMLPARSER+".extractAllItems():description found");
 					instanceFound = true;
 					Node lastChild = cNode.getLastChild();
 					if (lastChild == null) {
@@ -217,11 +218,11 @@ public class DomParser extends DomFunctions {
 	}//extractAllItems()
 	
 	private void extractChannelChildItems(Node node) {
-		System.out.println(DOMPARSER+".extractChannelChildItems():called");
+		System.out.println(XMLPARSER+".extractChannelChildItems():called");
 		
 		NodeList nList = node.getChildNodes();
 		int nLength = nList.getLength();
-		System.out.println(DOMPARSER+".extractChannelChildItems():nLength="+nLength);
+		System.out.println(XMLPARSER+".extractChannelChildItems():nLength="+nLength);
 		for(int i=0; i<nLength;i++) {
 			Node item = nList.item(i);
 			if ((item instanceof Element) && item.getNodeName().equals("item")) {
