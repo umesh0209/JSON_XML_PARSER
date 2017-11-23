@@ -11,7 +11,13 @@ public enum ItemsListDB {
 
 	public void createList() {
 		System.out.println("ItemsListDB.createList():called");
-		itemsLst = new LinkedList<NewsItem>();
+		if (itemsLst == null) {
+			System.out.println("ItemsListDB.createList():Creating...");
+			itemsLst = new LinkedList<NewsItem>();
+		}
+		else {
+			System.out.println("ItemsListDB.createList():the list is already created...");
+		}
 	}
 	
 	public NewsItem getNewsItem() {
@@ -48,5 +54,9 @@ public enum ItemsListDB {
 				System.out.println("link="+link);
 			}//end if
 		}//end while(iter.hasNext())
+		
+		//System.out.println("Deleting the list....");
+		itemsLst.clear();
+		itemsLst=null;
 	}
 }

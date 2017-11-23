@@ -12,14 +12,17 @@ import java.io.FileWriter;
 
 public class HttpHandler {
 	private final String HTTPHANDLER = this.getClass().getSimpleName();
+	int type;
+	String fileName;
 	
 	private SharedData sharedDataObj = SharedData.getInstance();
 			
 	public HttpHandler() {
 		System.out.println(HTTPHANDLER+"():Object Creation");
 		
-		int type = sharedDataObj.getType();
-		sharedDataObj.getCatList().get(type).getfName();
+		type = sharedDataObj.getType();
+		fileName=sharedDataObj.getCatList().get(type).getfName();
+		System.out.println(HTTPHANDLER+"():fileName="+fileName);
 	}
 	   
 	public void makeServiceCall(String reqUrl) throws IOException {
@@ -53,9 +56,6 @@ public class HttpHandler {
 	private void writeToFile(String str){
 		System.out.println(HTTPHANDLER+".writeToFile():called");
 		try {
-			
-			int type = sharedDataObj.getType();
-			String fileName = sharedDataObj.getCatList().get(type).getfName();
 			File file = new File(fileName);
 			FileWriter fileWriter = new FileWriter(file);
 			fileWriter.write(str);

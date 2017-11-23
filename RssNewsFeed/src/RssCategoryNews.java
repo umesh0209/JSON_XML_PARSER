@@ -16,16 +16,23 @@ public class RssCategoryNews {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("News Type World(1), Tech(2), Sports(3), Top Stories(4)");
 		int type = scan.nextInt();
+		if (type <0 || type > 5) {
+			System.out.println(RSSCATNEWS+"..setCategory()Wrong input, try again");
+			System.exit(0);
+		}
+		
+		System.out.println("Method for Parsing: DOM(1), SAX(2), StAX(3)");
+		int method = scan.nextInt();
 		scan.close();
 		
-		if (type <0 || type > 5) {
+		if (type <0 || type > 4) {
 			System.out.println(RSSCATNEWS+"..setCategory()Wrong input, try again");
 			System.exit(0);
 		}
 		
 		sharedDataObj.createCatList();
 		sharedDataObj.setType(type);
-		sharedDataObj.setMethod(sharedDataObj.XML_METHOD_DOM);
+		sharedDataObj.setMethod(method);
 		
 	}//end setCategory()
 	
@@ -35,14 +42,9 @@ public class RssCategoryNews {
 
 	}//end makeUrl()
 	
-	public void getXML() {
-		System.out.println(RSSCATNEWS+".getXML():called");
-		xmlObj.getXML();
-	}//end getXML()
-	
-	public void parsingXML() {
-		System.out.println(RSSCATNEWS+".domParser():called");
-		xmlObj.parseMethod();
+	public void doParse() {
+		System.out.println(RSSCATNEWS+".doParse():called");
+		xmlObj.doParse();
 	}
 	
 	public void displayItems() {

@@ -1,7 +1,7 @@
 
-public class CbsRss {
+public class CbsRssMain {
 
-	public CbsRss() {
+	public CbsRssMain() {
 	}
 
 	public static void main(String[] args) {
@@ -10,8 +10,7 @@ public class CbsRss {
 		RssCategoryNews cbsRssObj = new RssCategoryNews();
 		cbsRssObj.setCategory();
 		cbsRssObj.makeUrl();
-		cbsRssObj.getXML();
-		cbsRssObj.parsingXML();
+		cbsRssObj.doParse();
 		cbsRssObj.displayItems();
 	}
 }

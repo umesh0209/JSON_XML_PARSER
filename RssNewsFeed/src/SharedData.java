@@ -27,6 +27,8 @@ public class SharedData {
 	public final int XML_METHOD_DOM = 1;
 	public final int XML_METHOD_SAX = 2;
 	public final int XML_METHOD_StAX = 3;
+	public final String SORRY_INFO="########Sorry, No details found, please check the link ######";
+	public final String SORRY_LINK="########Sorry, No link found please go to https://www.cbsnews.com/ ######";
 	
 	//private data 
 	private Map<Integer, CategoryDetails> catList = new HashMap<>();
