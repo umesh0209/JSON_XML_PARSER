@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class RssCategoryNews {
 	private final String RSSCATNEWS = this.getClass().getSimpleName();
 	
-	private IXmlFunctions xmlObj=null;
+	private XmlParser xmlObj=null;
 	private SharedData sharedDataObj = SharedData.getInstance();
 	
 	public RssCategoryNews() {

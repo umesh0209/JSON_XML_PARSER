@@ -34,6 +34,7 @@ public class SharedData {
 	private Map<Integer, CategoryDetails> catList = new HashMap<>();
 	private  final String CBS_RSS_URL = 
 			"https://www.cbsnews.com/latest/rss/category";
+	private String urlWithCat;
 	private int type;
 	private int method;
 	
@@ -48,9 +49,10 @@ public class SharedData {
 	
 	public String getURL() {
 		System.out.println(SHRDDATA+".getURL():called");
+		setUrlWithCat(null);
 		return CBS_RSS_URL;
 	}
-
+	
 	public Map<Integer, CategoryDetails> getCatList() {
 		System.out.println(SHRDDATA+".getCatList():called");
 		return catList;
@@ -74,6 +76,16 @@ public class SharedData {
 	public void setMethod(int method) {
 		System.out.println(SHRDDATA+".setMethod():called");
 		this.method = method;
+	}
+	
+	public String getUrlWithCat() {
+		System.out.println(SHRDDATA+".getUrlWithCat():called");
+		return urlWithCat;
+	}
+
+	public void setUrlWithCat(String urlWithCat) {
+		System.out.println(SHRDDATA+".setUrlWithCat():called");
+		this.urlWithCat = urlWithCat;
 	}
 	/**********************************************************************************************/
 }

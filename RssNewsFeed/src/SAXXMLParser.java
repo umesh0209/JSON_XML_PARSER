@@ -12,7 +12,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class SAXXMLParser{
+public class SAXXMLParser extends XmlFunctions{
 	private final String SAXXMLPARSER = this.getClass().getSimpleName();
 	private String url;
 	
@@ -21,8 +21,13 @@ public class SAXXMLParser{
 		this.url = url;
 	}
 	
-	public void doParse() {
-		System.out.println(SAXXMLPARSER+".doParse():called");
+	protected String getParsingClassString() {
+		System.out.println(SAXXMLPARSER+".matchParsingClassString():called");
+		return SAXXMLPARSER;
+	}
+	
+	protected void parsingXML() {
+		System.out.println(SAXXMLPARSER+".parsingXML():called");
 		
 		URL ser_url=null;
 		try {
@@ -74,6 +79,8 @@ final class SAXHandler extends DefaultHandler{
 		System.out.println(SAXHANDLER+".startElement(): called");
 		System.out.println(SAXHANDLER+".startElement(): qName="+ qName +" found");
 		
+		String str=null;
+		
 		if (qName.equals("channel")){
 			System.out.println(SAXHANDLER+".startElement(): <channel> found, items will follow...");
 			cList.createList();
@@ -81,7 +88,8 @@ final class SAXHandler extends DefaultHandler{
 		}else if (qName.equals("item")) {
 			System.out.println(SAXHANDLER+".startElement(): <item> found, create an node");
 			newsItem = cList.getNewsItem();
-			startTagStack.push("item");
+			str = "item";
+			startTagStack.push(str);
 			return;
 		}
 		
@@ -95,21 +103,23 @@ final class SAXHandler extends DefaultHandler{
 		
 		if (qName.equals("title")) {
 			System.out.println(SAXHANDLER+".startElement(): <title> found");
-			startTagStack.push("title");
-			content = null;
+			str = "title";
 		}else if (qName.equals("description")) {
 			System.out.println(SAXHANDLER+".startElement(): <description> found");
-			startTagStack.push("description");
-			content = null;
+			str = "description";
 		}else if (qName.equals("link")) {
 			System.out.println(SAXHANDLER+".startElement(): <link> found");
-			startTagStack.push("link");
-			content = null;
+			str = "link";
 		}else {
 			System.out.println(SAXHANDLER+".startElement(): <item> child element not ineteresed(ENI)");
 			//Store it as Element Not interested (ENI) which are <image> <pubDate> <guid> of <item>
-			startTagStack.push("ENI");
+			str = "ENI";
 		}
+		
+		//push the qName, as it is related to <item>, and need to be processed, if ENI contents
+		//are not stored
+		startTagStack.push(str);
+		content = null;
 	}// startElement()
 
 	@Override

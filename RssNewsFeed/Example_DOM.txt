@@ -1,1215 +1,614 @@
 main():called
+SharedData.getInstance() singleton function called
 RssCategoryNews():Object Creation
-ItemsListDB: Instance creation
-ItemsListDB(): Object creation
+SharedData.getInstance() singleton function called
+XmlParser():called
 RssCategoryNews.setCategory():called
-News Type World(1), Tech(2), Games(3), Top Stories(4)
-4
+News Type World(1), Tech(2), Sports(3), Top Stories(4)
+1
+Method for Parsing: DOM(1), SAX(2), StAX(3)
+1
+SharedData.createCatList() called
+SharedData.getType():called
+SharedData.setMethod():called
 RssCategoryNews.makeUrl():called
-RssCategoryNews.makeUrl():xml/newsrss.xml
-RssCategoryNews.makeUrl():url replaced by category+https://www.cbsnews.com/latest/rss/main
-RssCategoryNews.getXML():called
+XmlParser.makeURL():called
+XmlParser.setContext():private func: Set the xml context
+SharedData.getURL():called
+SharedData.setUrlWithCat():called
+SharedData.getCatList():called
+SharedData.getType():called
+XmlParser.makeURL():Extract category string
+XmlParser.makeURL():User selected:world
+XmlParser.makeUrl():url replaced by category+https://www.cbsnews.com/latest/rss/world
+SharedData.setUrlWithCat():called
+RssCategoryNews.doParse():called
+XmlParser.doParse():called
+SharedData.getMethod():called
+XmlParser.getXML():called
+SharedData.getInstance() singleton function called
 HttpHandler():Object Creation
-HttpHandler.setFileName():called
-HttpHandler.setFileName()xml/newsrss.xml
+SharedData.getType():called
+SharedData.getCatList():called
+HttpHandler():fileName=xml/newsrss.xml
 HttpHandler.makeServiceCall():called
-HttpHandler.makeServiceCall():https://www.cbsnews.com/latest/rss/main
+HttpHandler.makeServiceCall():https://www.cbsnews.com/latest/rss/world
 makeServiceCall():connecting....
 makeServiceCall():response recvd....
 HttpHandlerconvertStreamToString():called
 HttpHandler.writeToFile():called
-RssCategoryNews.domParser():called
-RssCategoryNews.domParser():set filename=xml/newsrss.xml
-RssCategoryNews.domParser():Element[1]=channel
-RssCategoryNews.extractChannelChildItems():called
-RssCategoryNews.extractChannelChildItems():nLength=99
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+XmlParser.doParse():parsingClassName=DomParser
+XmlFunctions.processParseMethod():called
+XmlFunctions.processParseMethod():creating xml process objects...
+SharedData.getInstance() singleton function called
+SharedData.getUrlWithCat():called
+DomParser.DomParser():called
+SharedData.getInstance() singleton function called
+SAXXMLParser(https://www.cbsnews.com/latest/rss/world):called
+StAXParser():called
+SharedData.getInstance() singleton function called
+SharedData.getType():called
+SharedData.getCatList():called
+XmlFunctions.processParseMethod():Chaining them together...
+DomParser.setNextParseMethod():called
+SAXXMLParser.setNextParseMethod():called
+XmlFunctions.processParseMethod():start the ball rolling...
+DomParser.processMethodHanlder():called
+DomParser.matchParsingClassString():called
+DomParser.processMethodHanlder():parsingClassName=DomParser
+DomParser.processMethodHanlder(): start parsing...
+DomParser.parsingXML():called
+DomParser.parsingXML():create items DB list=null
+SharedData.getType():called
+SharedData.getCatList():called
+ItemsListDB.createList():called
+ItemsListDB.createList():Creating...
+SharedData.getCatList():called
+DomParser.parsingXML():set filename=xml/newsrss.xml
+DomParser.parsingXML():Element[1]=channel
+DomParser.extractChannelChildItems():called
+DomParser.extractChannelChildItems():nLength=51
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
+DomParser.extractAllItems():called
+DomParser.extractAllItems():iLength=13
+DomParser.extractAllItems():title found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
+DomParser.extractAllItems():link found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
+DomParser.extractAllItems():description found
 ItemsListDB.getNewsItem():get an element to be added to the list
 NewsItem(): Object creation
 NewsItem.setTitle(): called
 NewsItem.setLink(): called
 NewsItem.setDescription(): called
 ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():called
-RssCategoryNews.extractAllItems():iLength=13
-RssCategoryNews.extractAllItems():title found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():link found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
-RssCategoryNews.extractAllItems():description found
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-NewsItem.setTitle(): called
-NewsItem.setLink(): called
-NewsItem.setDescription(): called
-ItemsListDB.getNewsItem():add the item to the list
+SharedData.getType():called
+SharedData.getCatList():called
 RssCategoryNews.displayItems():called
 **************************************CBS NEWS*******************************
 ===========================================================
-title=More women accuse Moore of unwanted advances
-link=https://www.cbsnews.com/news/roy-moore-faces-more-women-accusing-him-of-unwanted-advances/
-description=Accusations include a woman saying Moore groped her when she was 28 years old
+title=Starbucks stirs up controversy in Italy
+link=https://www.cbsnews.com/news/starbucks-stirs-up-controversy-in-italy/
+description=Starbucks is planning to open its first store in Italy in 2018
 ===========================================================
-title=Shooter in deadly NorCal rampage wasn't allowed to have guns
-link=https://www.cbsnews.com/news/shooter-in-deadly-california-rampage-wasnt-allowed-to-have-guns/
-description=A court order issued in February after Kevin Neal allegedly stabbed a neighbor barred him from owning firearms
+title=Child labor spurs tech demand for ethically produced mineral
+link=https://www.cbsnews.com/news/congo-child-labor-apple-tesla-cobalt/
+description=Cobalt helps power everything from smartphones to laptops to electric vehicles
 ===========================================================
-title=Roy Moore’s attorney disputes accuser's yearbook note
-link=https://www.cbsnews.com/news/roy-moores-attorney-disputes-yearbook-note/
-description="Do you still hold that everything written in that yearbook was written by Judge Moore?" asked Roy Moore's attorney
+title="Seconds away from a certain death": Survivors recall mosque attack
+link=https://www.cbsnews.com/news/survivors-recall-deadly-mosque-attack-egypt/
+description=Those who survived spoke of children screaming as they saw parents and older brothers mowed down by gunfire or shredded by blasts
 ===========================================================
-title=House Republicans set to pass massive package of tax cuts
-link=https://www.cbsnews.com/news/house-republicans-set-to-hold-final-vote-on-tax-bill/
-description=Democrats were fuming Wednesday when Republicans in the Senate put out their own tax plan, which would repeal Obamacare's individual mandate
+title=Starbucks' Italy location may jolt country's coffee culture
+link=https://www.cbsnews.com/videos/starbucks-italy-location-may-jolt-countrys-coffee-culture/
+description=Starbucks is planning to open its first store in Italy in 2018, and that's stirring up controversy in the country where espresso was created. Seth Doane has more from Milan.
 ===========================================================
-title=500-year-old da Vinci painting sells for record $450M
-link=https://www.cbsnews.com/news/salvator-mundi-da-vinci-painting-final-auction/
-description=########Sorry, No details found, please check the link ######
+title=Egypt strikes back after deadly terror attack
+link=https://www.cbsnews.com/videos/egypt-strikes-back-after-deadly-terror-attack/
+description=Egypt's military hit back Saturday after the deadliest terror attack in the country's modern history. Friday's massacre took place at a mosque in a small village in the northern Sinai. Officials say 305 worshippers were killed, including 27 children. Another 128 people were wounded. Charlie D'Agata has the latest from London.
 ===========================================================
-title=Lawsuits filed against Mandalay Bay, concertholders, bump stock sellers
-link=https://www.cbsnews.com/news/las-vegas-shooting-lawsuits-filed-mandalay-bay-bump-stocks/
-description=########Sorry, No details found, please check the link ######
+title=Navy names sailors still missing after Pacific plane crash
+link=https://www.cbsnews.com/news/us-navy-plane-crash-sailors-missing-named-pacific-ocean-okinawa-japan/
+description=U.S. military called off search for 3 men days after C-2A Greyhound transport plane crashed southeast of Okinawa
 ===========================================================
-title=Ivanka Trump says she has no reason to doubt Moore's accusers
-link=https://www.cbsnews.com/news/ivanka-trump-theres-a-special-place-in-hell-for-people-who-prey-on-children/
-description=########Sorry, No details found, please check the link ######
+title=Death toll jumps after attack on Egyptian mosque
+link=https://www.cbsnews.com/news/egypt-mosque-attack-sinai-peninsula-isis-presence-death-toll-over-300/
+description=27 kids among hundreds killed by gunmen who attacked Sufi Muslims -- sect often targeted by ISIS -- at Friday prayers
 ===========================================================
-title=Photos from the Smithsonian's new hip-hop collection
-link=https://www.cbsnews.com/pictures/photos-from-smithsonian-anthology-of-hip-hop-and-rap/
-description=The influence of hip-hop and rap is chronicled in an expansive collection of music, photos and stories
+title=Egypt mosque attack leaves at least 305 dead
+link=https://www.cbsnews.com/videos/egypt-mosque-attack-leaves-at-least-305-dead/
+description=Friday’s terror attack at a crowded mosque in Egypt left at least 305 worshipers dead and more than 100 injured. The assault was in the northern part of the troubled Sinai Peninsula. No group has claimed responsibility for the attack. Charlie D’Agata reports.
 ===========================================================
-title=Workers at Calif. school averted "horrific bloodbath"
-link=https://www.cbsnews.com/news/workers-at-california-school-averted-horrific-bloodbath/
-description=########Sorry, No details found, please check the link ######
+title=U.S. reverses course on closing Palestinian office in DC
+link=https://www.cbsnews.com/news/us-reverses-course-on-closing-palestinian-office-in-dc/
+description=The State Department says it may stay open, with restrictions
 ===========================================================
-title=Trump says America's standing in the world has never been better
-link=https://www.cbsnews.com/news/trump-says-americas-standing-in-the-world-has-never-been-better-after-asia-trip/
-description=########Sorry, No details found, please check the link ######
+title=Hundreds dead after militants attack mosque in Egypt
+link=https://www.cbsnews.com/videos/hundreds-dead-after-militants-attack-mosque-in-egypt/
+description=At least 235 people were killed by bombs and bullets at a mosque in the Sinai peninsula. At least 109 were injured. The attackers were said to be Islamic militants who targeted other Muslims who don't follow their interpretation of Islam. President Trump called the massacre "horrible and cowardly." Elizabeth Palmer reports.
 ===========================================================
-title=Tampa police: New video shows suspect moments before 4th murder
-link=https://www.cbsnews.com/news/tampa-police-believe-new-video-shows-suspect-moments-before-4th-murder/
-description=########Sorry, No details found, please check the link ######
+title=11/24: CBS Evening News
+link=https://www.cbsnews.com/videos/1124-cbs-evening-news/
+description=At least 235 people were killed by bombs and bullets at a mosque in the Sinai peninsula. At least 109 were injured; When the lunch bell rings at Boca Raton High School in Florida, 3,400 kids spill into the courtyard and split into their social groups. But at this school and at schools across the country, someone always sits alone. That's why Denis Estimon, a Haitian immigrant and student at Boca High, started a club called "We Dine Together."
 ===========================================================
-title=Trump pauses during remarks for sip of water
-link=https://www.cbsnews.com/news/trump-pauses-during-remarks-to-sip-water/
-description=########Sorry, No details found, please check the link ######
+title=Militant with $10M bounty on his head freed from house arrest
+link=https://www.cbsnews.com/news/hafiz-saeed-pakistan-militant-us-freed-house-arrest/
+description=Authorities release U.S.-wanted militant who allegedly founded banned group linked to terror attack
 ===========================================================
-title=Steve Bannon will continue to support Roy Moore
-link=https://www.cbsnews.com/news/steve-bannon-will-continue-to-support-roy-moore/
-description=########Sorry, No details found, please check the link ######
+title=Tiger shot and killed after escaping from Paris circus
+link=https://www.cbsnews.com/news/tiger-shot-and-killed-after-escaping-from-paris-circus/
+description=Police said that the big cat was "neutralized" by a staff member from the circus near a bridge
 ===========================================================
-title=Deadly church shooting in Texas
-link=https://www.cbsnews.com/pictures/photos-deadly-church-shooting-sutherland-springs-texas/
-description=A gunman opened fire inside the First Baptist Church in Sutherland Springs, Texas, on Sunday
+title=Busy London station evacuated amid reports of shots fired
+link=https://www.cbsnews.com/news/oxford-circus-station-incident-uk-police-london-subway-live-updates/
+description=Police descend on shopping district after receiving multiple reports of shots fired; no casualties located
 ===========================================================
-title=UCLA players thank Trump, apologize for shoplifting in China
-link=https://www.cbsnews.com/news/live-ucla-basketball-players-speak-after-being-detained-in-china/
-description=########Sorry, No details found, please check the link ######
+title=Relatives of sailors missing on submarine heartbroken and angry
+link=https://www.cbsnews.com/news/argentina-missing-submarine-ara-san-juan-apparent-explosion-family-heartbroken/
+description=An international agency said it detected an underwater sound that's consistent with an explosion near the sub's last-known position
 ===========================================================
-title=Wrongfully convicted man walks free after 45 years
-link=https://www.cbsnews.com/news/i-forgave-and-i-forgive-wrongfully-convicted-man-wilbert-jones-freed-after-45-years/
-description=########Sorry, No details found, please check the link ######
+title=San Francisco's "sex slave" statue decision stirs controversy
+link=https://www.cbsnews.com/news/japan-protests-san-franciscos-sex-slave-statue-decision/
+description=City gives formal city property status to a statue commemorating women who worked in military-backed brothels for Japanese troops during World War II
 ===========================================================
-title="Violent" psych hospital escapee captured in California
-link=https://www.cbsnews.com/news/randall-saito-violent-patient-who-escaped-hawaii-psychiatric-hospital-captured-in-california/
-description=########Sorry, No details found, please check the link ######
+title="60 Minutes" visits Eigg, craggy isle off Scotland
+link=https://www.cbsnews.com/videos/60-minutes-visits-eigg-craggy-isle-off-scotland/
+description=With our busy lives in a fast-paced world, it's easy to dream of an escape from it all. For about a hundred people, that place is the isle of Eigg in the north Atlantic, off the coast of Scotland. The island's residents prefer to live far from modern life on the U.K. mainland. "60 Minutes" correspondent Steve Kroft visited the island to see the appeal and the unparalleled natural beauty. Watch the full report Sunday, Nov. 26 on "60 Minutes."
 ===========================================================
-title=Previously unseen treasures from King Tut's tomb on display
-link=https://www.cbsnews.com/news/king-tut-tomb-display-egypt/
-description=########Sorry, No details found, please check the link ######
+title=At least 235 killed in Egypt mosque attack
+link=https://www.cbsnews.com/news/egypt-attack-sinai-peninsula-mosque-bir-al-abd-dead-wounded/
+description=Militants set off explosives and spray worshippers with gunfire in the deadliest ever attack by Islamic extremists in Egypt
 ===========================================================
-title=Hilarious finalists of the 2017 Comedy Wildlife Photography Awards
-link=https://www.cbsnews.com/pictures/hilarious-finalists-of-the-2017-comedy-wildlife-photography-awards/
-description=Judges of the 2017 Comedy Wildlife Photography Awards may have trouble picking winners from this hilarious group of finalists
+title=Search for Navy sailors in cargo plane crash called off
+link=https://www.cbsnews.com/videos/search-for-navy-sailors-in-cargo-plane-crash-called-off/
+description=The U.S. Navy called off the search for three sailors missing in the western Pacific. They were on a cargo plane that crashed Wednesday, trying to reach an American aircraft carrier south of Japan. Ben Tracy reports.
 ===========================================================
-title=Voters disapprove of GOP tax plans in new poll
-link=https://www.cbsnews.com/news/voters-give-thumbs-down-to-gop-tax-plans-in-quinnipiac-poll/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Woman dies after liposuction surgery, family demands answers
-link=https://www.cbsnews.com/news/woman-dead-liposuction-surgery-mexico-irma-saenz/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Indulgent grandparents could be bad for kids' health
-link=https://www.cbsnews.com/news/grandparents-indulgent-behavior-could-be-bad-for-kids-health/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=U.S. monitoring "fluid" situation in Zimbabwe
-link=https://www.cbsnews.com/news/u-s-monitoring-fluid-situation-in-zimbabwe/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Major blackout hits Puerto Rico's most populated region
-link=https://www.cbsnews.com/news/puerto-rico-power-blackout-hurricane-maria-aftermath/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Notable deaths in 2017
-link=https://www.cbsnews.com/pictures/notable-deaths-in-2017/
-description=A look back at the esteemed personalities who left us this year, who'd touched us with their innovation, creativity and humanity
-===========================================================
-title=Bob Corker says Senate is "taking up some of the vacuum" left by WH
-link=https://www.cbsnews.com/news/bob-corker-says-senate-is-taking-up-some-of-the-vacuum-left-by-white-house/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Firefighters battle 5-alarm fire in St. Louis
-link=https://www.cbsnews.com/news/warehouse-fire-st-louis/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Army acknowledges failures to report crime data to FBI
-link=https://www.cbsnews.com/news/army-acknowledges-failures-to-report-crime-data-to-fbi-after-texas-shooting/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Third Ohio pastor indicted on sex trafficking charges
-link=https://www.cbsnews.com/news/ohio-pastors-indicted-child-sex-trafficking-conspiracy/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Suicide bombers carry out deadly attack in Nigeria
-link=https://www.cbsnews.com/news/nigeria-suicide-bombers-boko-haram/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Academy honors Donald Sutherland
-link=https://www.cbsnews.com/pictures/academy-honors-donald-sutherland/
-description=The actor renowned for such classics as "MASH," "Don't Look Now" and "Ordinary People" is the recipient of a lifetime achievement Oscar
-===========================================================
-title=Lost mail leads to dismissal of charges in overdose death
-link=https://www.cbsnews.com/news/lost-mail-leads-to-dismissal-of-charges-in-overdose-death/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Ancient fossil forest discovered in unlikely place
-link=https://www.cbsnews.com/news/ancient-fossil-forest-discovered-in-antarctica/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Dad creates comic book character with Down syndrome for his son
-link=https://www.cbsnews.com/news/dad-creates-comic-book-character-with-down-syndrome-for-his-son/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Park ranger rediscovers rare species forgotten for at least 4 decades
-link=https://www.cbsnews.com/news/jacksons-climbing-salamander-rediscovered-guatemala/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Nicki Minaj poses for racy Paper magazine cover
-link=https://www.cbsnews.com/news/nicki-minaj-tries-to-break-the-internet-with-racy-paper-magazine-cover/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=Kim Kardashian West confirms sex of third baby
-link=https://www.cbsnews.com/news/kim-kardashian-west-confirms-sex-of-third-baby/
-description=########Sorry, No details found, please check the link ######
-===========================================================
-title=CMA Awards red carpet
-link=https://www.cbsnews.com/pictures/cma-awards-red-carpet-2017/
-description=Country music stars gathered at the Bridgestone Arena on November 8, 2017 in Nashville for the annual Country Music Association awards
-===========================================================
-title=Does Backpage help or hinder efforts to stop sex trafficking?
-link=https://www.cbsnews.com/news/backpage-website-investigation-sex-trafficking-prostitution/
-description=Some in law enforcement say that if ads aren't on their site they'll pop up somewhere else – on sites that may not be as helpful to police
-===========================================================
-title=Ford takes action as Explorer exhaust complaints grow
-link=https://www.cbsnews.com/news/ford-explorer-carbon-monoxide-free-repairs/
-description=NHTSA is investigating at least 1.3 million Explorers based on reports of exhaust, which contains carbon monoxide, seeping into the passenger cabin
-===========================================================
-title=For Jordan Peele, "Get Out" is about "truth"
-link=https://www.cbsnews.com/news/jordan-peele-get-out-movie/
-description=Critics are predicting that "Get Out" will be a best picture contender at this year's Academy Awards
-===========================================================
-title=House GOP tax bill: Will it pass? The whip count so far
-link=https://www.cbsnews.com/news/house-gop-tax-bill-will-it-pass-the-whip-count-so-far/
-description=Here are the House members opposing the tax bill in its current form. The House is slated to vote on the measure Thursday
-===========================================================
-title=Roy Moore speaks amid sexual misconduct allegations
-link=https://www.cbsnews.com/news/roy-moore-speaks-amid-sexual-misconduct-allegations/
-description=Embattled GOP Senate candidate spoke at the God Save America Revival conference Tuesday night in Alabama
-===========================================================
-title=New video emerges of failed migrant rescue attempt in Mediterranean
-link=https://www.cbsnews.com/news/african-migrants-new-video-failed-rescue-attempt-libyan-coast-guard/
-description=It appears their supposed rescuers, members of the Libyan coast guard, were trying to capture them to return them to North Africa
+title=Relatives angry over missing Argentine submarine's apparent explosion
+link=https://www.cbsnews.com/videos/relatives-angry-over-missing-argentine-submarines-apparent-explosion/
+description=An ominous new development in the search for a missing Argentine submarine raises concerns it may have plunged off the continental shelf. An international agency said it detected an underwater sound that's consistent with an explosion near the sub's last known position in the south Atlantic. It has a crew of 44 sailors. Adriana Diaz reports.

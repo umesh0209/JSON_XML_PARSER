@@ -13,7 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class DomParser {
+public class DomParser extends XmlFunctions {
 
 	private final String DOMPARSER = this.getClass().getSimpleName();
 	
@@ -26,11 +26,16 @@ public class DomParser {
 		System.out.println(DOMPARSER+".DomParser():called");
 		sharedDataObj = SharedData.getInstance();
 	}
+	
+	protected String getParsingClassString() {
+		System.out.println(DOMPARSER+".matchParsingClassString():called");
+		return DOMPARSER;
+	}
  
-	public void doParse() {
-		System.out.println(DOMPARSER+".doParse():called");
+	protected void parsingXML() {
+		System.out.println(DOMPARSER+".parsingXML():called");
 		
-		System.out.println(DOMPARSER+".doParse():create items DB list="+itemsDB);
+		System.out.println(DOMPARSER+".parsingXML():create items DB list="+itemsDB);
 		type = sharedDataObj.getType();
 		itemsDB = sharedDataObj.getCatList().get(type).getItemsDB();
 		itemsDB.createList();
@@ -43,7 +48,7 @@ public class DomParser {
 			//Get DOM builder
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			//Load and parser XML, document contains the entire XML as a tree
-			System.out.println(DOMPARSER+".doParse():set filename="+fileName);
+			System.out.println(DOMPARSER+".parsingXML():set filename="+fileName);
 			
 			Document document = builder.parse(new File(fileName));
 			//Normalize the XML Structure; It's just too important !!
@@ -55,7 +60,7 @@ public class DomParser {
 			for(int i=0; i<nList.getLength(); i++) {
 				Node n = nList.item(i);
 				if (n.getNodeType() == ELEMENT_NODE) {
-					System.out.println(DOMPARSER+".doParse():Element["+i+"]="+n.getNodeName());
+					System.out.println(DOMPARSER+".parsingXML():Element["+i+"]="+n.getNodeName());
 					if (n.getNodeName().equals("channel")) {
 						extractChannelChildItems(n);
 					}//end if
@@ -71,7 +76,7 @@ public class DomParser {
 			saxe.printStackTrace();
 			System.exit(0);
 		}
-	}//end doParse()
+	}//end parsingXML()
 	   
 	/*************************************************************************************
 	 *                                 PRIVATE DOM FUNCTIONS                             *

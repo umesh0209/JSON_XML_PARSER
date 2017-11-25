@@ -1,12 +1,7 @@
 import java.io.IOException;
 import java.util.Map;
 
-abstract class XmlFunctions implements IXmlFunctions{
-	public abstract void makeURL();
-	public abstract void doParse();
-}
-
-public class XmlParser extends XmlFunctions {
+public class XmlParser{
 	
 	private final String XMLPARSER = this.getClass().getSimpleName();
 
@@ -19,7 +14,6 @@ public class XmlParser extends XmlFunctions {
 		System.out.println(XMLPARSER+"():called");
 	}
 	
-	@Override
 	public void makeURL() {
 		System.out.println(XMLPARSER+".makeURL():called");
 		
@@ -32,23 +26,32 @@ public class XmlParser extends XmlFunctions {
 			url = url.replace("category", catVal);
 			System.out.println(XMLPARSER+".makeUrl():url replaced by category+"+url);
 		}
+		sharedDataObj.setUrlWithCat(url);
 	}//end makeUrl()
 	
-	@Override
 	public void doParse()
 	{
-		System.out.println(XMLPARSER+".parseMethod():called");
+		System.out.println(XMLPARSER+".doParse():called");
+		String parsingClassName=null;
 		
 		int method = sharedDataObj.getMethod();
 		if (method == sharedDataObj.XML_METHOD_DOM ) {
 			getXML();
-			DomParser domParserObj = new DomParser();
-			domParserObj.doParse();
+			parsingClassName = DomParser.class.getName().toString();
 		}
 		else if (method == sharedDataObj.XML_METHOD_SAX ) {
-			SAXXMLParser saxParserObj = new SAXXMLParser(url);
-			saxParserObj.doParse();
+			parsingClassName = SAXXMLParser.class.getName().toString();
 		}
+		else if (method == sharedDataObj.XML_METHOD_StAX) {
+			parsingClassName = StAXParser.class.getName().toString();
+		}
+		else {
+			System.out.println("Please check the input for method.....");
+			System.exit(0);
+		}
+		
+		System.out.println(XMLPARSER+".doParse():parsingClassName="+parsingClassName);
+		XmlFunctions.processParseMethod(parsingClassName);
 	}
 	
 	/*************************************************************************************

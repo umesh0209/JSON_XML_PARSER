@@ -5,7 +5,7 @@ SharedData.getInstance() singleton function called
 XmlParser():called
 RssCategoryNews.setCategory():called
 News Type World(1), Tech(2), Sports(3), Top Stories(4)
-1
+2
 Method for Parsing: DOM(1), SAX(2), StAX(3)
 2
 SharedData.createCatList() called
@@ -15,16 +15,41 @@ RssCategoryNews.makeUrl():called
 XmlParser.makeURL():called
 XmlParser.setContext():private func: Set the xml context
 SharedData.getURL():called
+SharedData.setUrlWithCat():called
 SharedData.getCatList():called
 SharedData.getType():called
 XmlParser.makeURL():Extract category string
-XmlParser.makeURL():User selected:world
-XmlParser.makeUrl():url replaced by category+https://www.cbsnews.com/latest/rss/world
+XmlParser.makeURL():User selected:tech
+XmlParser.makeUrl():url replaced by category+https://www.cbsnews.com/latest/rss/tech
+SharedData.setUrlWithCat():called
 RssCategoryNews.doParse():called
-XmlParser.parseMethod():called
+XmlParser.doParse():called
 SharedData.getMethod():called
-SAXXMLParser(https://www.cbsnews.com/latest/rss/world):called
-SAXXMLParser.doParse():called
+XmlParser.doParse():parsingClassName=SAXXMLParser
+XmlFunctions.processParseMethod():called
+XmlFunctions.processParseMethod():creating xml process objects...
+SharedData.getInstance() singleton function called
+SharedData.getUrlWithCat():called
+DomParser.DomParser():called
+SharedData.getInstance() singleton function called
+SAXXMLParser(https://www.cbsnews.com/latest/rss/tech):called
+StAXParser():called
+SharedData.getInstance() singleton function called
+SharedData.getType():called
+SharedData.getCatList():called
+XmlFunctions.processParseMethod():Chaining them together...
+DomParser.setNextParseMethod():called
+SAXXMLParser.setNextParseMethod():called
+XmlFunctions.processParseMethod():start the ball rolling...
+DomParser.processMethodHanlder():called
+DomParser.matchParsingClassString():called
+DomParser.processMethodHanlder():parsingClassName=DomParser
+DomParser.processMethodHanlder(): forward to next in the chain...
+SAXXMLParser.processMethodHanlder():called
+SAXXMLParser.matchParsingClassString():called
+SAXXMLParser.processMethodHanlder():parsingClassName=SAXXMLParser
+SAXXMLParser.processMethodHanlder(): start parsing...
+SAXXMLParser.parsingXML():called
 SharedData.getInstance() singleton function called
 SAXHandler(): called
 SharedData.getType():called
@@ -98,10 +123,6 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=Man known as
-SAXHandler.characters(): contents=Man known as"
-SAXHandler.characters(): contents=Man known as"Butcher of Bosnia
-SAXHandler.characters(): contents=Man known as"Butcher of Bosnia"
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -118,8 +139,12 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=description found
 SAXHandler.startElement(): <description> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=A U.N. tribunal found Ratko Mladic guilty of genocide and war crimes on Wednesday. He masterminded Europe
-SAXHandler.characters(): contents=A U.N. tribunal found Ratko Mladic guilty of genocide and war crimes on Wednesday. He masterminded Europe'
+SAXHandler.characters(): contents=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine
+SAXHandler.characters(): contents=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine'
+SAXHandler.characters(): contents=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine's site director, Jason Tanz, joins
+SAXHandler.characters(): contents=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine's site director, Jason Tanz, joins"
+SAXHandler.characters(): contents=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine's site director, Jason Tanz, joins"CBS This Morning: Saturday
+SAXHandler.characters(): contents=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine's site director, Jason Tanz, joins"CBS This Morning: Saturday"
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </description> found:adding desc
 NewsItem.setDescription(): called
@@ -127,25 +152,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -178,18 +203,9 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=description found
 SAXHandler.startElement(): <description> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig'
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition.
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother'
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission"
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission"airs Saturday on
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission"airs Saturday on"
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission"airs Saturday on"48 Hours
-SAXHandler.characters(): contents=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission"airs Saturday on"48 Hours"
+SAXHandler.characters(): contents=Worker protests in Germany and Italy to demand better wages from the e-commerce giant coincide with
+SAXHandler.characters(): contents=Worker protests in Germany and Italy to demand better wages from the e-commerce giant coincide with"
+SAXHandler.characters(): contents=Worker protests in Germany and Italy to demand better wages from the e-commerce giant coincide with"Black Friday
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </description> found:adding desc
 NewsItem.setDescription(): called
@@ -197,25 +213,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -232,66 +248,10 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement():</title> found: adding title
-NewsItem.setTitle(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=link found
-SAXHandler.startElement(): <link> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </link> found:adding link
-NewsItem.setLink(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=description found
-SAXHandler.startElement(): <description> found
-SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=Muslims make up the world
-SAXHandler.characters(): contents=Muslims make up the world'
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </description> found:adding desc
-NewsItem.setDescription(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=pubDate found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=image found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=guid found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </item> found:adding node
-ItemsListDB.getNewsItem():add the item to the list
-SAXHandler.endElement():<item>... </item> PARSING WENT FINE
-SAXHandler.characters(): contents=null
-SAXHandler.characters():IGNORED
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=item found
-SAXHandler.startElement(): <item> found, create an node
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=title found
-SAXHandler.startElement(): <title> found
-SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Fake Google ad sent users searching for
+SAXHandler.characters(): contents=Fake Google ad sent users searching for"
+SAXHandler.characters(): contents=Fake Google ad sent users searching for"Amazon
+SAXHandler.characters(): contents=Fake Google ad sent users searching for"Amazon"
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -315,25 +275,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -350,69 +310,8 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=Zimbabwe
-SAXHandler.characters(): contents=Zimbabwe'
-SAXHandler.endElement(): called
-SAXHandler.endElement():</title> found: adding title
-NewsItem.setTitle(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=link found
-SAXHandler.startElement(): <link> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </link> found:adding link
-NewsItem.setLink(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=description found
-SAXHandler.startElement(): <description> found
-SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents="
-SAXHandler.characters(): contents="I appeal to all genuine people of Zimbabwe to come together,
-SAXHandler.characters(): contents="I appeal to all genuine people of Zimbabwe to come together,"
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </description> found:adding desc
-NewsItem.setDescription(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=pubDate found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=image found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=guid found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </item> found:adding node
-ItemsListDB.getNewsItem():add the item to the list
-SAXHandler.endElement():<item>... </item> PARSING WENT FINE
-SAXHandler.characters(): contents=null
-SAXHandler.characters():IGNORED
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=item found
-SAXHandler.startElement(): <item> found, create an node
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=title found
-SAXHandler.startElement(): <title> found
-SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Tesla builds world
+SAXHandler.characters(): contents=Tesla builds world'
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -436,25 +335,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -471,6 +370,8 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Here come the Macy
+SAXHandler.characters(): contents=Here come the Macy'
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -494,25 +395,87 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+SAXHandler.endElement():<item>... </item> PARSING WENT FINE
+SAXHandler.characters(): contents=null
+SAXHandler.characters():IGNORED
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=item found
+SAXHandler.startElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=title found
+SAXHandler.startElement(): <title> found
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=YouTube outlines
+SAXHandler.characters(): contents=YouTube outlines"
+SAXHandler.characters(): contents=YouTube outlines"approach to protect families
+SAXHandler.characters(): contents=YouTube outlines"approach to protect families"
+SAXHandler.endElement(): called
+SAXHandler.endElement():</title> found: adding title
+NewsItem.setTitle(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=link found
+SAXHandler.startElement(): <link> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </link> found:adding link
+NewsItem.setLink(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=description found
+SAXHandler.startElement(): <description> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=pubDate found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=image found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=guid found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -552,25 +515,209 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+SAXHandler.endElement():<item>... </item> PARSING WENT FINE
+SAXHandler.characters(): contents=null
+SAXHandler.characters():IGNORED
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=item found
+SAXHandler.startElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=title found
+SAXHandler.startElement(): <title> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement():</title> found: adding title
+NewsItem.setTitle(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=link found
+SAXHandler.startElement(): <link> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </link> found:adding link
+NewsItem.setLink(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=description found
+SAXHandler.startElement(): <description> found
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Atlanta latest municipality to pass requirements to add charging stations and demand
+SAXHandler.characters(): contents=Atlanta latest municipality to pass requirements to add charging stations and demand"
+SAXHandler.characters(): contents=Atlanta latest municipality to pass requirements to add charging stations and demand"EV-ready
+SAXHandler.characters(): contents=Atlanta latest municipality to pass requirements to add charging stations and demand"EV-ready"
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=pubDate found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=image found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=guid found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+SAXHandler.endElement():<item>... </item> PARSING WENT FINE
+SAXHandler.characters(): contents=null
+SAXHandler.characters():IGNORED
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=item found
+SAXHandler.startElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=title found
+SAXHandler.startElement(): <title> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement():</title> found: adding title
+NewsItem.setTitle(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=link found
+SAXHandler.startElement(): <link> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </link> found:adding link
+NewsItem.setLink(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=description found
+SAXHandler.startElement(): <description> found
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Satellite observations show Earth
+SAXHandler.characters(): contents=Satellite observations show Earth'
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=pubDate found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=image found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=guid found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+SAXHandler.endElement():<item>... </item> PARSING WENT FINE
+SAXHandler.characters(): contents=null
+SAXHandler.characters():IGNORED
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=item found
+SAXHandler.startElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=title found
+SAXHandler.startElement(): <title> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement():</title> found: adding title
+NewsItem.setTitle(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=link found
+SAXHandler.startElement(): <link> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </link> found:adding link
+NewsItem.setLink(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=description found
+SAXHandler.startElement(): <description> found
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Cops say cyber thieves transferred Bitcoins from a man
+SAXHandler.characters(): contents=Cops say cyber thieves transferred Bitcoins from a man'
+SAXHandler.characters(): contents=Cops say cyber thieves transferred Bitcoins from a man's account while he logged into a restaurant
+SAXHandler.characters(): contents=Cops say cyber thieves transferred Bitcoins from a man's account while he logged into a restaurant'
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=pubDate found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=image found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=guid found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -610,25 +757,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -668,25 +815,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -703,133 +850,9 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=U.S. declares
-SAXHandler.characters(): contents=U.S. declares"
-SAXHandler.characters(): contents=U.S. declares"ethnic cleansing
-SAXHandler.characters(): contents=U.S. declares"ethnic cleansing"
-SAXHandler.endElement(): called
-SAXHandler.endElement():</title> found: adding title
-NewsItem.setTitle(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=link found
-SAXHandler.startElement(): <link> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </link> found:adding link
-NewsItem.setLink(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=description found
-SAXHandler.startElement(): <description> found
-SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents="
-SAXHandler.characters(): contents="It is clear that the situation in northern Rakhine state constitutes ethnic cleansing against the Rohingya,
-SAXHandler.characters(): contents="It is clear that the situation in northern Rakhine state constitutes ethnic cleansing against the Rohingya,"
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </description> found:adding desc
-NewsItem.setDescription(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=pubDate found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=image found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=guid found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </item> found:adding node
-ItemsListDB.getNewsItem():add the item to the list
-SAXHandler.endElement():<item>... </item> PARSING WENT FINE
-SAXHandler.characters(): contents=null
-SAXHandler.characters():IGNORED
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=item found
-SAXHandler.startElement(): <item> found, create an node
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=title found
-SAXHandler.startElement(): <title> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement():</title> found: adding title
-NewsItem.setTitle(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=link found
-SAXHandler.startElement(): <link> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </link> found:adding link
-NewsItem.setLink(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=description found
-SAXHandler.startElement(): <description> found
-SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=3 years after World Health Organization declared them useless, rights group says
-SAXHandler.characters(): contents=3 years after World Health Organization declared them useless, rights group says"
-SAXHandler.characters(): contents=3 years after World Health Organization declared them useless, rights group says"cruel
-SAXHandler.characters(): contents=3 years after World Health Organization declared them useless, rights group says"cruel"
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </description> found:adding desc
-NewsItem.setDescription(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=pubDate found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=image found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=guid found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </item> found:adding node
-ItemsListDB.getNewsItem():add the item to the list
-SAXHandler.endElement():<item>... </item> PARSING WENT FINE
-SAXHandler.characters(): contents=null
-SAXHandler.characters():IGNORED
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=item found
-SAXHandler.startElement(): <item> found, create an node
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=title found
-SAXHandler.startElement(): <title> found
-SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=FCC lays out plan to roll back
+SAXHandler.characters(): contents=FCC lays out plan to roll back"
+SAXHandler.characters(): contents=FCC lays out plan to roll back"net neutrality
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -853,25 +876,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -888,8 +911,12 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=Dramatic new video captures North Korean soldier
-SAXHandler.characters(): contents=Dramatic new video captures North Korean soldier'
+SAXHandler.characters(): contents=Scientist:
+SAXHandler.characters(): contents=Scientist:"
+SAXHandler.characters(): contents=Scientist:"Planet
+SAXHandler.characters(): contents=Scientist:"Planet'
+SAXHandler.characters(): contents=Scientist:"Planet's history
+SAXHandler.characters(): contents=Scientist:"Planet's history"
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -906,8 +933,8 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=description found
 SAXHandler.startElement(): <description> found
 SAXHandler.characters(): contents=null
-SAXHandler.characters(): contents=The U.N. Command says North Korea
-SAXHandler.characters(): contents=The U.N. Command says North Korea'
+SAXHandler.characters(): contents=Scientists worry downgrading the size of Utah
+SAXHandler.characters(): contents=Scientists worry downgrading the size of Utah'
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </description> found:adding desc
 NewsItem.setDescription(): called
@@ -915,25 +942,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -966,6 +993,8 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=description found
 SAXHandler.startElement(): <description> found
 SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Exoskeleton technology first appeared in medical uses, but now it
+SAXHandler.characters(): contents=Exoskeleton technology first appeared in medical uses, but now it'
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </description> found:adding desc
 NewsItem.setDescription(): called
@@ -973,25 +1002,85 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+SAXHandler.endElement():<item>... </item> PARSING WENT FINE
+SAXHandler.characters(): contents=null
+SAXHandler.characters():IGNORED
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=item found
+SAXHandler.startElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=title found
+SAXHandler.startElement(): <title> found
+SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Trump
+SAXHandler.characters(): contents=Trump'
+SAXHandler.endElement(): called
+SAXHandler.endElement():</title> found: adding title
+NewsItem.setTitle(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=link found
+SAXHandler.startElement(): <link> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </link> found:adding link
+NewsItem.setLink(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=description found
+SAXHandler.startElement(): <description> found
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=pubDate found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=image found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
+SAXHandler.startElement(): called
+SAXHandler.startElement(): qName=guid found
+SAXHandler.startElement(): <item> child element not ineteresed(ENI)
+SAXHandler.characters(): contents=null
+SAXHandler.endElement(): called
+SAXHandler.endElement(): ENI(<item> child Element not interested
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -1024,6 +1113,13 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=description found
 SAXHandler.startElement(): <description> found
 SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said"
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said"not so fast
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said"not so fast"
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said"not so fast"and that he thinks it
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said"not so fast"and that he thinks it"
+SAXHandler.characters(): contents=Mayor Bill de Blasio has said"not so fast"and that he thinks it"creates a danger
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </description> found:adding desc
 NewsItem.setDescription(): called
@@ -1031,25 +1127,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -1082,6 +1178,8 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=description found
 SAXHandler.startElement(): <description> found
 SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Uber said Monday that it plans to buy as many as 24,000 self-driving cars from Volvo starting in less than two years. New York
+SAXHandler.characters(): contents=Uber said Monday that it plans to buy as many as 24,000 self-driving cars from Volvo starting in less than two years. New York'
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </description> found:adding desc
 NewsItem.setDescription(): called
@@ -1089,25 +1187,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -1147,25 +1245,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -1182,6 +1280,9 @@ SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=title found
 SAXHandler.startElement(): <title> found
 SAXHandler.characters(): contents=null
+SAXHandler.characters(): contents=Blazing fireball lights up Arctic sky with
+SAXHandler.characters(): contents=Blazing fireball lights up Arctic sky with"
+SAXHandler.characters(): contents=Blazing fireball lights up Arctic sky with"glow of 100 full moons
 SAXHandler.endElement(): called
 SAXHandler.endElement():</title> found: adding title
 NewsItem.setTitle(): called
@@ -1205,83 +1306,25 @@ SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=pubDate found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.characters(): contents=
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=image found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.startElement(): called
 SAXHandler.startElement(): qName=guid found
 SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
+SAXHandler.characters(): contents=null
 SAXHandler.endElement(): called
 SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </item> found:adding node
-ItemsListDB.getNewsItem():add the item to the list
-SAXHandler.endElement():<item>... </item> PARSING WENT FINE
 SAXHandler.characters(): contents=null
-SAXHandler.characters():IGNORED
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=item found
-SAXHandler.startElement(): <item> found, create an node
-ItemsListDB.getNewsItem():get an element to be added to the list
-NewsItem(): Object creation
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=title found
-SAXHandler.startElement(): <title> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement():</title> found: adding title
-NewsItem.setTitle(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=link found
-SAXHandler.startElement(): <link> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </link> found:adding link
-NewsItem.setLink(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=description found
-SAXHandler.startElement(): <description> found
-SAXHandler.characters(): contents=null
-SAXHandler.endElement(): called
-SAXHandler.endElement(): </description> found:adding desc
-NewsItem.setDescription(): called
-SAXHandler.characters(): contents=null
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=pubDate found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=image found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
-SAXHandler.startElement(): called
-SAXHandler.startElement(): qName=guid found
-SAXHandler.startElement(): <item> child element not ineteresed(ENI)
-SAXHandler.characters(): contents=
-SAXHandler.endElement(): called
-SAXHandler.endElement(): ENI(<item> child Element not interested
-SAXHandler.characters(): contents=
 SAXHandler.endElement(): called
 SAXHandler.endElement(): </item> found:adding node
 ItemsListDB.getNewsItem():add the item to the list
@@ -1299,82 +1342,82 @@ SharedData.getCatList():called
 RssCategoryNews.displayItems():called
 **************************************CBS NEWS*******************************
 ===========================================================
-title=Man known as"Butcher of Bosnia"found guilty of war crimes, genocide
-description=A U.N. tribunal found Ratko Mladic guilty of genocide and war crimes on Wednesday. He masterminded Europe's worst atrocities since World War II. Elizabeth Palmer reports Mladic did not go down quietly.
-link=https://www.cbsnews.com/videos/man-known-as-butcher-of-bosnia-found-guilty-of-war-crimes-genocide/
+title=Breaking down the fight over net neutrality
+description=Next month, the Federal Communications Commission is expected to wipe out net neutrality. FCC chairman Ajit Pai announced his intention this week to roll back regulations put in place by the Obama administration that prevent internet providers from blocking or slowing access to certain websites. Wired magazine's site director, Jason Tanz, joins"CBS This Morning: Saturday"to discuss the controversy surrounding the announcement and why it could put smaller web companies at a disadvantage.
+link=https://www.cbsnews.com/videos/breaking-down-the-fight-over-net-neutrality/
 ===========================================================
-title=How does Brazilian punishment fit the crime?
-description=To get justice for his death, Karl Hoerig's family in the United States must first navigate the Brazilian criminal justice system, which may keep his suspected murderer from facing extradition."A Brother's Mission"airs Saturday on"48 Hours"at 10/9c.
-link=https://www.cbsnews.com/videos/how-does-brazilian-punishment-fit-the-crime/
+title=Amazon workers in Germany, Italy strike
+description=Worker protests in Germany and Italy to demand better wages from the e-commerce giant coincide with"Black Friday"
+link=https://www.cbsnews.com/news/amazon-workers-in-germany-italy-protest-for-wage-hikes/
 ===========================================================
-title=The most heavily Muslim countries on Earth
-description=Muslims make up the world's second-largest religious group, after Christians
-link=https://www.cbsnews.com/pictures/most-heavily-muslim-countries-on-earth/
+title=Fake Google ad sent users searching for"Amazon"to scam site
+description=The ad appeared at the top of search results for an unknown number of users for at least part of the day Thursday
+link=https://www.cbsnews.com/news/fake-google-ad-sent-users-searching-for-amazon-to-scam-site/
 ===========================================================
-title=Saudi-led coalition says it will ease Yemen blockade
-description=Airport in the capital of Sanaa would reopen to U.N. aircraft and the sea port of Hodeida would be able to receive urgent humanitarian aid
-link=https://www.cbsnews.com/news/yemen-blockade-saudi-led-coalition/
+title=Tesla builds world's largest battery -- in just 100 days
+description=Located in South Australia, it will be charged by a nearby wind farm to help power an area four times the size of the U.K.
+link=https://www.cbsnews.com/news/tesla-wins-bet-to-build-worlds-largest-battery-in-100-days/
 ===========================================================
-title=Zimbabwe's incoming leader returns home to cheers
-description="I appeal to all genuine people of Zimbabwe to come together,"Emmerson Mnangagwa said
-link=https://www.cbsnews.com/news/zimbabwes-incoming-leader-emmerson-mnangagwa-returns-home-to-cheers/
+title=Here come the Macy's balloons, there goes our helium?
+description=Earth has a finite supply of helium, but experts say fears of running out are -- for lack of a better word -- overinflated
+link=https://www.cbsnews.com/news/macys-thanksgiving-day-parade-balloons-helium/
 ===========================================================
-title=Woman confesses to putting 4 newborns in concrete, police say
-description=Mayumi Saito was arrested on charges of abandoning bodies, a day after she turned herself in at the police station
-link=https://www.cbsnews.com/news/mayumi-saito-arrested-confessed-to-putting-newborns-in-concrete-tokyo-police/
+title=YouTube outlines"approach to protect families"following criticism
+description=The move comes after recent criticism that YouTube is not doing enough to crack down on disturbing and exploitative videos aimed at children
+link=https://www.cbsnews.com/news/youtube-outlines-approach-to-protect-families-following-criticism/
 ===========================================================
-title=Arm found in sea, likely that of Swedish reporter Kim Wall
-description=Peter Madsen is accused of a manslaughter in death of journalist who disappeared after joining him on sub
-link=https://www.cbsnews.com/news/arm-denmark-swedish-journalist-kim-wall-peter-madsens-submarine/
+title=Net neutrality repeal means your internet may never be the same
+description=The FCC is about to overturn Obama-era rules on net neutrality, which could be just the start of a whole new internet experience
+link=https://www.cbsnews.com/news/net-neutrality-repeal-means-your-internet-may-never-be-the-same/
 ===========================================================
-title=Rex Tillerson makes unilateral determination on child soldiers
-description=State Dept officials accuse the secretary of State of breaking law in not listing Myanmar, Afghanistan and Iraq as countries using child soldiers
-link=https://www.cbsnews.com/news/rex-tillerson-makes-unilateral-determination-on-child-soldiers/
+title=Is your city ready for electric cars?
+description=Atlanta latest municipality to pass requirements to add charging stations and demand"EV-ready"infrastructure
+link=https://www.cbsnews.com/news/is-your-city-ready-for-the-switch-to-electric-vehicles/
 ===========================================================
-title=In surprise reversal, Lebanese PM puts resignation on hold
-description=Saad Hariri reverses shocking resignation announced after returning from Saudi Arabia where he made it
-link=https://www.cbsnews.com/news/lebanese-prime-minister-saad-hariri-resignation-lebanon/
+title=Light pollution increasing around globe, researchers say
+description=Satellite observations show Earth's artificially lit outdoor area grew by 2 percent a year from 2012 to 2016
+link=https://www.cbsnews.com/news/light-pollution-increasing-around-globe/
 ===========================================================
-title=Philippines to extradite priest accused of abuse in U.S.
-description=Fernando Sayasaya faces charges of sexually molesting two boys in North Dakota churches in 1990s
-link=https://www.cbsnews.com/news/philippines-catholic-priest-fernando-sayasaya-sexual-assault-north-dakota/
+title=Bitcoins worth $100K stolen over public WiFi
+description=Cops say cyber thieves transferred Bitcoins from a man's account while he logged into a restaurant's public network
+link=https://www.cbsnews.com/news/bitcoins-worth-100k-stolen-over-public-wireless-network/
 ===========================================================
-title=U.S. declares"ethnic cleansing"against Rohingya in Myanmar
-description="It is clear that the situation in northern Rakhine state constitutes ethnic cleansing against the Rohingya,"wrote Sec. Tillerson in a statement on Wednesday
-link=https://www.cbsnews.com/news/u-s-declares-ethnic-cleansing-against-rohingya-in-myanmar/
+title=Facebook to let users see if they interacted with Russian trolls
+description=As many as 126 million people could have seen content posted on pages related to the Internet Research Agency, a Russian troll farm
+link=https://www.cbsnews.com/news/facebook-users-will-soon-be-able-to-see-if-they-interacted-with-russian-trolls/
 ===========================================================
-title=Indonesia accused of subjecting female recruits to virginity tests
-description=3 years after World Health Organization declared them useless, rights group says"cruel"practice continues
-link=https://www.cbsnews.com/news/indonesia-virginity-tests-female-police-military-recruits/
+title=Android phones still track you when location services are off
+description=An investigation found that Android phones collected addresses of nearby cellular towers and sent them back to Google
+link=https://www.cbsnews.com/news/android-phones-google-still-track-you-when-location-services-are-turned-off/
 ===========================================================
-title=Did Secretary of State Tillerson violate child soldiers law?
-description=The State Department is defending Secretary of State Rex Tillerson after his own employees accused him of violating a law meant to stop the use of child soldiers. Tillerson left Afghanistan, Iraq and Burma off a list of countries using child soldiers, prompting State officials to take the unusual step of sending an unsigned dissent memo. Margaret Brennan reports.
-link=https://www.cbsnews.com/videos/did-secretary-of-state-tillerson-violate-child-soldiers-law/
+title=FCC lays out plan to roll back"net neutrality"
+description=Agency chief Ajit Pai says requirement that internet providers treat web traffic equally stifles competition
+link=https://www.cbsnews.com/news/fcc-net-neutrality-repeal/
 ===========================================================
-title=Dramatic new video captures North Korean soldier's daring defection
-description=The U.N. Command says North Korea's army violated the 1953 Korean War Armistice in their pursuit of the fleeing soldier
-link=https://www.cbsnews.com/news/north-korean-defector-soldier-conscious-dramatic-video/
+title=Scientist:"Planet's history"at stake if Trump downgrades national monument
+description=Scientists worry downgrading the size of Utah's Grand Staircase could damage one of the richest deposits of dinosaur bones in the world
+link=https://www.cbsnews.com/news/trumps-national-monuments-decision-could-impact-dinosaur-fossils-site/
 ===========================================================
-title=Watch how a North Korean soldier defected to the South
-description=Doctors in South Korea say a wounded North Korean soldier whose dramatic defection was caught on video is now conscious. The United Nations released new video from several security cameras that show the daring escape. Ben Tracy reports.
-link=https://www.cbsnews.com/videos/watch-how-a-north-korean-soldier-defected-to-the-south/
+title=Bionic devices turn humans into superstrong workers
+description=Exoskeleton technology first appeared in medical uses, but now it's breaking into workplaces like factories
+link=https://www.cbsnews.com/news/bionic-devices-turn-humans-into-superstrong-workers/
 ===========================================================
-title=Rescue underway after Navy plane crashes off Japan coast
-description=A U.S. Navy plane crashed with 11 people on board. The C2-A transport went down in the ocean south of Japan. Eight crew members have been found so far and are in good condition. Ben Tracy, who flew on one of the planes last week, reports.
-link=https://www.cbsnews.com/videos/rescue-underway-after-navy-plane-crashes-off-japan-coast/
+title=Trump's science office is a ghost town
+description=In its 41 years, the Office of Science and Technology Policy has never gone this long without a leader or official mandate
+link=https://www.cbsnews.com/news/donald-trumps-science-office-is-a-ghost-town/
 ===========================================================
-title=Tennis star faces criminal probe over real estate project
-description=Indian officials accuse firm behind luxury apartment complex of stealing millions of dollars from home buyers
-link=https://www.cbsnews.com/news/maria-sharapova-india-police-real-estate-cheating-criminal-conspiracy/
+title=Gov. Cuomo wants to bring driverless cars to New York City
+description=Mayor Bill de Blasio has said"not so fast"and that he thinks it"creates a danger"
+link=https://www.cbsnews.com/news/driverless-cars-new-york-city-andrew-cuomo/
 ===========================================================
-title=Ex-commander gets life sentence for Yugoslav war crimes
-description=UN tribunal convicts former Bosnian Serb military chief Ratko Mladic of genocide and crimes against humanity
-link=https://www.cbsnews.com/news/ratko-mladic-bosnian-serb-srebrenica-guilty-yugoslav-war-crimes-trial/
+title=Gov. Cuomo wants to bring driverless cars to New York City
+description=Uber said Monday that it plans to buy as many as 24,000 self-driving cars from Volvo starting in less than two years. New York's governor wants to bring driverless cars to the Big Apple even sooner. Kris Van Cleave reports.
+link=https://www.cbsnews.com/videos/gov-cuomo-wants-to-bring-driverless-cars-to-new-york-city/
 ===========================================================
-title=Time, oxygen running out fast for crew of missing sub
-description=No sign of Argentine naval vessel after six days, crew could have just a day of air left
-link=https://www.cbsnews.com/news/argentina-ara-san-juan-submarine-south-atlantic-oxygen-running-out/
+title=How the Georgia Dome implosion was achieved
+description=A glimpse inside the preparations taken to bring down the iconic Atlanta venue in just 12 seconds
+link=https://www.cbsnews.com/news/georgia-dome-implosion-demolision-how-achieved/
 ===========================================================
-title=Pentagon probing behavior of U.S. personnel during Trump Asia trip
-description=Word follows report that 3 military members were reassigned from WH posts after allegations of improper contact with foreign women during the trip
-link=https://www.cbsnews.com/news/pentagon-probing-behavior-of-u-s-personnel-during-trump-asia-trip/
+title=Blazing fireball lights up Arctic sky with"glow of 100 full moons"
+description=Experts were scrambling to calculate its trajectory and find where it landed
+link=https://www.cbsnews.com/news/blazing-meteorite-lights-up-arctic-sky-with-glow-of-100-full-moons/
