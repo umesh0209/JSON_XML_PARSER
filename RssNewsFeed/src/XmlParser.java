@@ -49,6 +49,14 @@ public class XmlParser extends XmlFunctions {
 			SAXXMLParser saxParserObj = new SAXXMLParser(url);
 			saxParserObj.doParse();
 		}
+		else if (method == sharedDataObj.XML_METHOD_StAX) {
+			StAXParser staxParserObj = new StAXParser(url);
+			staxParserObj.doParse();
+		}
+		else {
+			System.out.println("Please check the input for method.....");
+			System.exit(0);
+		}
 	}
 	
 	/*************************************************************************************

@@ -1,0 +1,1995 @@
+main():called
+SharedData.getInstance() singleton function called
+RssCategoryNews():Object Creation
+SharedData.getInstance() singleton function called
+XmlParser():called
+RssCategoryNews.setCategory():called
+News Type World(1), Tech(2), Sports(3), Top Stories(4)
+3
+Method for Parsing: DOM(1), SAX(2), StAX(3)
+3
+SharedData.createCatList() called
+SharedData.getType():called
+SharedData.setMethod():called
+RssCategoryNews.makeUrl():called
+XmlParser.makeURL():called
+XmlParser.setContext():private func: Set the xml context
+SharedData.getURL():called
+SharedData.getCatList():called
+SharedData.getType():called
+XmlParser.makeURL():Extract category string
+XmlParser.makeURL():User selected:scitech-gamecore
+XmlParser.makeUrl():url replaced by category+https://www.cbsnews.com/latest/rss/scitech-gamecore
+RssCategoryNews.doParse():called
+XmlParser.parseMethod():called
+SharedData.getMethod():called
+StAXParser():called
+SharedData.getInstance() singleton function called
+SharedData.getType():called
+SharedData.getCatList():called
+StAXParser.doParse():called
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=rss found
+StAXParser.staxStartElement(): Element not related to <item>
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=channel found
+StAXParser.staxStartElement(): <channel> found, items will follow...
+ItemsListDB.createList():called
+ItemsListDB.createList():Creating...
+StAXParser.staxCharacters() called:
+        
+        
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+        
+        
+StAXParser.staxCharacters() called:
+               
+
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+               
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): Element not related to <item>
+StAXParser.staxCharacters() called:GameCore - CBSNews.com
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...GameCore - CBSNews.com
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): Element not related to <item>
+StAXParser.staxCharacters() called:https://www.cbsnews.com/
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...https://www.cbsnews.com/
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): Element not related to <item>
+StAXParser.staxCharacters() called:old node id:500397 From CBSNews.com
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...old node id:500397 From CBSNews.com
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): Element not related to <item>
+StAXParser.staxCharacters() called:Sat, 25 Nov 2017 17:07:40 +0000
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...Sat, 25 Nov 2017 17:07:40 +0000
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=ttl found
+StAXParser.staxStartElement(): Element not related to <item>
+StAXParser.staxCharacters() called:5
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...5
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+StAXParser.staxCharacters() called:
+        
+                    
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+        
+                    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Nintendo makes its smartphone debut
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/videos/nintendo-makes-its-smartphone-debut/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Nintendo is playing catch-up when it comes to innovation and recently announced it will enter the smartphone market. CNET
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s Jeff Bakalar joins CBSN with more.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 18 Mar 2015 16:36:37 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2015/03/18/419c5a3c-33f1-4b3b-ba72-60d290d767a5/thumbnail/60x60/e8bda12bc81fd5d71cf9b1fb8a8348eb/cbsn0318nintendo360449640x360.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:cb457db6-ff4e-4cf1-a502-8af768b9e421
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: NBA 2K14
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-nba-2k14/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Is this iteration in the award-winning series the best of the bunch?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Tue, 24 Sep 2013 15:14:10 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2013/09/23/6a232822-3598-11e3-8ce8-047d7b15b92e/thumbnail/60x60/f5f4031058c2042a9bf75ce01dfa66a6/nba2k14033-formatted.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:6a2132cd-3598-11e3-8ce8-047d7b15b92e
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Killzone Mercenary
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: review: A must-buy for the PS Vita
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/killzone-mercenary-review-a-must-buy-for-the-ps-vita/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Killzone Mercenary
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: is the great first-person shooter the PlayStation Vita has been waiting for
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Tue, 10 Sep 2013 15:08:17 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews1.cbsistatic.com/hub/i/r/2013/09/06/0dd25b80-20fe-11e3-9283-005056850598/thumbnail/60x60/ffa727eb01062ab8d6c4e1f8b69248b4/KillzoneMercenary_screen.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:0d90a61b-20fe-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Rayman Legends: Review
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/rayman-legends-review/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Ubisoft
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s award-winning action series returns with Rayman Legends. So what
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s in store for the beloved hero Rayman and his friend in this all-new family-friendly 3-D game? Read on to find out.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 04 Sep 2013 20:20:35 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews1.cbsistatic.com/hub/i/r/2013/09/04/fead6411-20fc-11e3-9283-005056850598/thumbnail/60x60/4041a639630ec5dc1ff04acace8acb44/RaymanLegends_Batcave.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:fe79c82d-20fc-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: Splinter Cell Blacklist
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-splinter-cell-blacklist/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Sam Fisher is as good as he
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s ever been in the latest release of this stealth series.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 21 Aug 2013 16:04:37 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/08/16/469e6d64-1c4c-11e3-9918-005056850598/thumbnail/60x60/f8544120d535226e1cfba9849d1874dc/SCBlacklist_Screen_Sam_1.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:d84a2cbd-3597-11e3-8ce8-047d7b15b92e
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Namco Bandai Presents Some of Their Fall 2013 Line-up
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/namco-bandai-presents-some-of-their-fall-2013-line-up/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Gamecore took a look at several titles that Namco Bandai has cued up for the rest of Q3 and Q4 of 2013 shopping season.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Tue, 20 Aug 2013 15:21:36 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/08/20/590c25a1-1c4c-11e3-9918-005056850598/thumbnail/60x60/3df994145123b983ec68fbcdd03d2db0/2013-05-14_16-45-38.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:e59c6930-3597-11e3-8ce8-047d7b15b92e
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:E3 2013: NBA Live 14 Preview
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/e3-2013-nba-live-14-preview/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Will the jump to next-gen consoles give the basketball sim a triumphant return?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Thu, 13 Jun 2013 05:49:21 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews1.cbsistatic.com/hub/i/r/2013/06/12/e3fa22d0-1c51-11e3-9918-005056850598/thumbnail/60x60/c6224659e06731b948e826788297be65/NBALive14-E3-Screenshot.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:19ceb8d0-2019-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:E3 2013: 
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Watch Dogs
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: Preview
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/e3-2013-watch-dogs-preview/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:What new tricks does this much-anticipated title have up its sleeves?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Thu, 13 Jun 2013 05:56:43 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2013/06/12/f4186f99-1c51-11e3-9918-005056850598/thumbnail/60x60/2dcd7a7d45d8fee5a2199a59d0d7b933/watch_dogs_AidenHacking-E3.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:19d6943e-2019-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:E3 2013: Sony Press Briefing
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/e3-2013-sony-press-briefing/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Sony announced its price point and used-games policy for the PS4. Was it enough to win the early rounds of the next console war?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 12 Jun 2013 17:35:15 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/06/11/06403fa6-1c52-11e3-9918-005056850598/thumbnail/60x60/08e74e00f0e53bd08de30937daa5c3b6/ps4-e3-2013-price.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:0f121ffc-2019-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:E3 2013: Microsoft Press Briefing
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/e3-2013-microsoft-press-briefing/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Did Microsoft regain its footing after its shaky Xbox One unveiling?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Tue, 11 Jun 2013 05:46:37 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/06/10/24ccb103-d2fe-11e2-a43e-02911869d855/thumbnail/60x60/4609a184f30813700f5709f9be7d6081/XboxE3-2013.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:04dac6c2-2019-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: 
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:The Last of Us
+StAXParser.staxCharacters() called:"
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-the-last-of-us/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Does Naughty Dog
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s latest title live up to the studio
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s critically acclaimed pedigree?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Mon, 10 Jun 2013 05:24:02 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews1.cbsistatic.com/hub/i/r/2013/06/09/34b03b02-d249-11e2-a43e-02911869d855/thumbnail/60x60/b2a5eeaf7ec8defedaacd1d7e0b2cef7/tlou-reviewscreen.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:fbc2c4b6-2018-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Xbox One Press Conference
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/xbox-one-press-conference/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Microsoft unveiled its follow-up to the Xbox 360, with a heavy focus on TV integration.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 22 May 2013 19:08:46 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2013/05/21/7fb89bd6-d276-11e2-a43e-02911869d855/thumbnail/60x60/25048ba840578ed54125cbf7d59dd149/AP74734729473.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:6cfbba0f-2018-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Preview: Killzone Mercenary
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/preview-killzone-mercenary/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Could this be the definitive first-person shooter on the Vita?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Mon, 20 May 2013 06:44:46 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/05/19/0252d398-c3c0-11e2-a43e-02911869d855/thumbnail/60x60/a2cdc41c513ee703cc9d8ce02d0a7f8e/ps3-game-6469-ss11.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:51ad39a3-2018-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:A Good Day to Die Hard
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: on Digital HD
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/a-good-day-to-die-hard-on-digital-hd/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:In conjunction with 20th Century Fox releasing 
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:A Good Day to Die Hard
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: on Digital HD, Rob Hollocks and the team at FreeForm LA are creating a 16-bit, free to download mobile based game to promote the digital release.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 15 May 2013 15:29:11 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2013/05/15/09a0e6e7-c3d3-11e2-a43e-02911869d855/thumbnail/60x60/ccb8576e4d5712ba7047863c9a9c8f51/digital_hd_dh.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:30526ca4-2018-11e3-9283-005056850598
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Preview: Injustice: Gods Among Us
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/preview-injustice-gods-among-us/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:NetherRealm Studios throws their hat int he ring of superhero games with their latest venture into the DC Universe.  How will it stack up especially for hardcore comic fans?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 27 Mar 2013 18:48:19 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/03/27/1612e096-a738-11e2-a3f0-029118418759/thumbnail/60x60/9ada7a9c1f868b03bf84b8eecf572213/injustice_gods_among_us.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:ee10b87e-a757-11e2-a3f0-029118418759
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Gears of War: Judgment
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: review
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/gears-of-war-judgment-review-moves-the-needle-forward-a-notch/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Do all the changes to the latest installment add up to the definitive Gears experience?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Mon, 18 Mar 2013 17:00:29 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews3.cbsistatic.com/hub/i/r/2013/03/17/1191974d-a738-11e2-a3f0-029118418759/thumbnail/60x60/f644dbc8dc17026cdde2382f3edc8711/SP_Mansion_01.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:c9383eba-a756-11e2-a3f0-029118418759
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: MLB 13 The Show
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-mlb-13-the-show/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Does the acclaimed baseball simulation take another step toward capturing the action on the diamond?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Wed, 13 Mar 2013 20:27:55 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews1.cbsistatic.com/hub/i/r/2013/03/13/0f87f7b0-a738-11e2-a3f0-029118418759/thumbnail/60x60/b112f79c82c541fee37c9e8b722978c7/harper_4.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:edf5b2f2-a757-11e2-a3f0-029118418759
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: God of War Ascension
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-god-of-war-ascension/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Does this prequel live up to the franchise
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s epic reputation?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Tue, 12 Mar 2013 20:38:24 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2013/03/12/0ea45cf7-a738-11e2-a3f0-029118418759/thumbnail/60x60/bc693d6e7df01358cf2e598e0e1a8992/TemInt_14r-cropped.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:edda8350-a757-11e2-a3f0-029118418759
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: 
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Sly Cooper Thieves in Time
+StAXParser.staxCharacters() called:"
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-sly-cooper-thieves-in-time/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:After a 12-year hiatus, does Sly
+StAXParser.staxCharacters() called:'
+StAXParser.staxCharacters() called:s latest adventure capture the spirit of the previous titles?
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Sun, 03 Mar 2013 00:19:17 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews1.cbsistatic.com/hub/i/r/2013/03/02/5b3aeba5-a645-11e2-a3f0-029118418759/thumbnail/60x60/ffaffd4344b22132d594e75e6e4c4c46/SLYCOOPER-ENGLAND.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:edbf7a03-a757-11e2-a3f0-029118418759
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+            
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=item found
+StAXParser.staxStartElement(): <item> found, create an node
+ItemsListDB.getNewsItem():get an element to be added to the list
+NewsItem(): Object creation
+Stack=>push:item
+StAXParser.staxCharacters() called:
+                
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=title found
+StAXParser.staxStartElement(): <title> found
+Stack=>push:title
+StAXParser.staxCharacters() called:Review: 
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Tomb Raider
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: marks a new era for iconic game
+StAXParser.staxEndElement():called
+Stack=>pop:title
+StAXParser.staxEndElement():</title> found: adding title
+NewsItem.setTitle(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=link found
+StAXParser.staxStartElement(): <link> found
+Stack=>push:link
+StAXParser.staxCharacters() called:https://www.cbsnews.com/news/review-tomb-raider-marks-a-new-era-for-iconic-game/
+StAXParser.staxEndElement():called
+Stack=>pop:link
+StAXParser.staxEndElement(): </link> found:adding link
+NewsItem.setLink(): called
+StAXParser.staxCharacters() called:
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=description found
+StAXParser.staxStartElement(): <description> found
+Stack=>push:description
+StAXParser.staxCharacters() called:Square Enix and Crystal Dynamics usher the 
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called:Tomb Raider
+StAXParser.staxCharacters() called:"
+StAXParser.staxCharacters() called: series into a new era in this epic adventure and origin story of relic hunter Lara Croft.
+StAXParser.staxEndElement():called
+Stack=>pop:description
+StAXParser.staxEndElement(): </description> found:adding desc
+NewsItem.setDescription(): called
+StAXParser.staxCharacters() called:
+
+            
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=pubDate found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:Fri, 01 Mar 2013 22:39:32 +0000
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+    
+                    
+StAXParser.staxCharacters() called:
+
+	    	        
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=image found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:https://cbsnews2.cbsistatic.com/hub/i/r/2013/03/01/5aa15350-a645-11e2-a3f0-029118418759/thumbnail/60x60/5e5a8e3c7ea6c552f5a849bc2b9bace8/The-Village-with-Radio-Tower-in-Backgroung.jpg
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+	        
+    
+StAXParser.staxStartElement():called
+StAXParser.staxStartElement(): qName=guid found
+StAXParser.staxStartElement(): <item> child element not ineteresed(ENI)
+Stack=>push:ENI
+StAXParser.staxCharacters() called:bf297789-a756-11e2-a3f0-029118418759
+StAXParser.staxEndElement():called
+Stack=>pop:ENI
+StAXParser.staxEndElement(): ENI <item> child Element not interested
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxEndElement():called
+Stack=>pop:item
+StAXParser.staxEndElement(): </item> found:adding node
+ItemsListDB.getNewsItem():add the item to the list
+StAXParser.staxEndElement():<item>... </item> PARSING WENT FINE
+StAXParser.staxCharacters() called:
+        
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+        
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+StAXParser.staxCharacters() called:
+
+StAXParser.staxCharacters():IGNORE THE CHARACTERS...
+
+StAXParser.staxEndElement():called
+StAXParser.staxEndElement(): element not related to <item>, so ignore
+SharedData.getType():called
+SharedData.getCatList():called
+RssCategoryNews.displayItems():called
+**************************************CBS NEWS*******************************
+===========================================================
+title=Nintendo makes its smartphone debut
+description=Nintendo is playing catch-up when it comes to innovation and recently announced it will enter the smartphone market. CNET's Jeff Bakalar joins CBSN with more.
+link=https://www.cbsnews.com/videos/nintendo-makes-its-smartphone-debut/
+===========================================================
+title=Review: NBA 2K14
+description=Is this iteration in the award-winning series the best of the bunch?
+link=https://www.cbsnews.com/news/review-nba-2k14/
+===========================================================
+title="Killzone Mercenary" review: A must-buy for the PS Vita
+description="Killzone Mercenary" is the great first-person shooter the PlayStation Vita has been waiting for
+link=https://www.cbsnews.com/news/killzone-mercenary-review-a-must-buy-for-the-ps-vita/
+===========================================================
+title=Rayman Legends: Review
+description=Ubisoft's award-winning action series returns with Rayman Legends. So what's in store for the beloved hero Rayman and his friend in this all-new family-friendly 3-D game? Read on to find out.
+link=https://www.cbsnews.com/news/rayman-legends-review/
+===========================================================
+title=Review: Splinter Cell Blacklist
+description=Sam Fisher is as good as he's ever been in the latest release of this stealth series.
+link=https://www.cbsnews.com/news/review-splinter-cell-blacklist/
+===========================================================
+title=Namco Bandai Presents Some of Their Fall 2013 Line-up
+description=Gamecore took a look at several titles that Namco Bandai has cued up for the rest of Q3 and Q4 of 2013 shopping season.
+link=https://www.cbsnews.com/news/namco-bandai-presents-some-of-their-fall-2013-line-up/
+===========================================================
+title=E3 2013: NBA Live 14 Preview
+description=Will the jump to next-gen consoles give the basketball sim a triumphant return?
+link=https://www.cbsnews.com/news/e3-2013-nba-live-14-preview/
+===========================================================
+title=E3 2013: "Watch Dogs" Preview
+description=What new tricks does this much-anticipated title have up its sleeves?
+link=https://www.cbsnews.com/news/e3-2013-watch-dogs-preview/
+===========================================================
+title=E3 2013: Sony Press Briefing
+description=Sony announced its price point and used-games policy for the PS4. Was it enough to win the early rounds of the next console war?
+link=https://www.cbsnews.com/news/e3-2013-sony-press-briefing/
+===========================================================
+title=E3 2013: Microsoft Press Briefing
+description=Did Microsoft regain its footing after its shaky Xbox One unveiling?
+link=https://www.cbsnews.com/news/e3-2013-microsoft-press-briefing/
+===========================================================
+title=Review: "The Last of Us"
+description=Does Naughty Dog's latest title live up to the studio's critically acclaimed pedigree?
+link=https://www.cbsnews.com/news/review-the-last-of-us/
+===========================================================
+title=Xbox One Press Conference
+description=Microsoft unveiled its follow-up to the Xbox 360, with a heavy focus on TV integration.
+link=https://www.cbsnews.com/news/xbox-one-press-conference/
+===========================================================
+title=Preview: Killzone Mercenary
+description=Could this be the definitive first-person shooter on the Vita?
+link=https://www.cbsnews.com/news/preview-killzone-mercenary/
+===========================================================
+title="A Good Day to Die Hard" on Digital HD
+description=In conjunction with 20th Century Fox releasing "A Good Day to Die Hard" on Digital HD, Rob Hollocks and the team at FreeForm LA are creating a 16-bit, free to download mobile based game to promote the digital release.
+link=https://www.cbsnews.com/news/a-good-day-to-die-hard-on-digital-hd/
+===========================================================
+title=Preview: Injustice: Gods Among Us
+description=NetherRealm Studios throws their hat int he ring of superhero games with their latest venture into the DC Universe.  How will it stack up especially for hardcore comic fans?
+link=https://www.cbsnews.com/news/preview-injustice-gods-among-us/
+===========================================================
+title="Gears of War: Judgment" review
+description=Do all the changes to the latest installment add up to the definitive Gears experience?
+link=https://www.cbsnews.com/news/gears-of-war-judgment-review-moves-the-needle-forward-a-notch/
+===========================================================
+title=Review: MLB 13 The Show
+description=Does the acclaimed baseball simulation take another step toward capturing the action on the diamond?
+link=https://www.cbsnews.com/news/review-mlb-13-the-show/
+===========================================================
+title=Review: God of War Ascension
+description=Does this prequel live up to the franchise's epic reputation?
+link=https://www.cbsnews.com/news/review-god-of-war-ascension/
+===========================================================
+title=Review: "Sly Cooper Thieves in Time"
+description=After a 12-year hiatus, does Sly's latest adventure capture the spirit of the previous titles?
+link=https://www.cbsnews.com/news/review-sly-cooper-thieves-in-time/
+===========================================================
+title=Review: "Tomb Raider" marks a new era for iconic game
+description=Square Enix and Crystal Dynamics usher the "Tomb Raider" series into a new era in this epic adventure and origin story of relic hunter Lara Croft.
+link=https://www.cbsnews.com/news/review-tomb-raider-marks-a-new-era-for-iconic-game/
