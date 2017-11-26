@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.2">
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
@@ -14,8 +14,7 @@ IXmlFunctions
 --
 +setNextParseMethod(IXmlFunctions):void
 +processMethodHanlder(String):void
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -36,8 +35,7 @@ nxtProcess:IXmlFunctions
 _+processParseMethod(String):void_
 /#parsingXML():void/
 /#getParsingClassString():String/
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -48,15 +46,14 @@ group=1</panel_attributes>
       <w>30</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>330</x>
-      <y>440</y>
+      <y>450</y>
       <w>280</w>
       <h>200</h>
     </coordinates>
@@ -72,8 +69,7 @@ DomParser
 #parsingXML():void
 #getParsingClassString():String
 -extractAllItems(Node):void
--extractChannelChildItems(Node):void
-group=1</panel_attributes>
+-extractChannelChildItems(Node):void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -82,17 +78,16 @@ group=1</panel_attributes>
       <x>560</x>
       <y>380</y>
       <w>110</w>
-      <h>80</h>
+      <h>90</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-group=1</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;60.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>650</x>
-      <y>440</y>
+      <y>460</y>
       <w>280</w>
       <h>150</h>
     </coordinates>
@@ -105,8 +100,7 @@ url:String
 #parsingXML():void
 #getParsingClassString():String
 -extractAllItems(Node):void
--extractChannelChildItems(Node):void
-group=1</panel_attributes>
+-extractChannelChildItems(Node):void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -115,17 +109,16 @@ group=1</panel_attributes>
       <x>770</x>
       <y>390</y>
       <w>30</w>
-      <h>70</h>
+      <h>90</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-group=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>650</x>
-      <y>630</y>
+      <y>660</y>
       <w>320</w>
       <h>210</h>
     </coordinates>
@@ -142,21 +135,19 @@ SAXHandler
 +SAXHandler()
 +startElement(String,String,String,Attributes):void
 +characters(char[],int,int):void
-+endElement(String,String,String):void
-group=1</panel_attributes>
++endElement(String,String,String):void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>770</x>
-      <y>580</y>
+      <y>600</y>
       <w>30</w>
-      <h>70</h>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-group=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -164,11 +155,10 @@ group=1</panel_attributes>
       <x>960</x>
       <y>770</y>
       <w>70</w>
-      <h>30</h>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-group=1</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -193,8 +183,7 @@ StAXHandler
 #getParsingClassString():String
 -staxStartElement(XMLStreamReader):void
 -staxCharacters(XMLStreamReader):void
--staxEndElement(XMLStreamReader):void
-group=1</panel_attributes>
+-staxEndElement(XMLStreamReader):void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -205,8 +194,7 @@ group=1</panel_attributes>
       <w>160</w>
       <h>110</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;90.0</additional_attributes>
   </element>
   <element>
@@ -217,8 +205,7 @@ group=1</panel_attributes>
       <w>30</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -229,8 +216,7 @@ group=1</panel_attributes>
       <w>120</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
   <element>
@@ -241,8 +227,7 @@ group=1</panel_attributes>
       <w>30</w>
       <h>110</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
@@ -253,8 +238,7 @@ group=1</panel_attributes>
       <w>90</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -265,8 +249,7 @@ group=1</panel_attributes>
       <w>100</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>Successor
-group=1</panel_attributes>
+    <panel_attributes>Successor</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -288,8 +271,7 @@ RssCategoryNews
 +makeUrl(): void
 +doParse(): void
 +displayItems(): void
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -300,8 +282,7 @@ group=1</panel_attributes>
       <w>100</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>DefaultHanlder
-group=1</panel_attributes>
+    <panel_attributes>DefaultHanlder</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -325,8 +306,7 @@ XmlParser
 +doParse(): void
 -getXML(): void
 -setContext(): void
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -337,8 +317,7 @@ group=1</panel_attributes>
       <w>110</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -350,8 +329,7 @@ group=1</panel_attributes>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black
-group=1</panel_attributes>
+bg=black</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -373,8 +351,7 @@ HttpHandler
 +makeServiceCall(String): void
 -writeToFile(String): void
 -convertStreamToString(InputStream):String
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -386,8 +363,7 @@ group=1</panel_attributes>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black
-group=1</panel_attributes>
+bg=black</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
@@ -402,8 +378,7 @@ group=1</panel_attributes>
 CbsRssMain
 --
 +main(String[] args): void
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -415,8 +390,7 @@ group=1</panel_attributes>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-bg=black
-group=1</panel_attributes>
+bg=black</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
@@ -427,8 +401,7 @@ group=1</panel_attributes>
       <w>950</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-group=1</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>930.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -440,21 +413,21 @@ group=1</panel_attributes>
       <h>30</h>
     </coordinates>
     <panel_attributes>Chain of Responisbility pattern:Direction of Chain
-
-group=1</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>80</x>
-      <y>160</y>
-      <w>190</w>
-      <h>50</h>
+      <x>30</x>
+      <y>150</y>
+      <w>260</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>DomParser uses HttpHandler to get XML
-bg=blue
-group=1</panel_attributes>
+    <panel_attributes>Note:
+XmlParser:
+DomParser uses HttpHandler to get XML
+bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -469,8 +442,23 @@ group=1</panel_attributes>
 Common Data is shared among all objects using Singleton SharedData object.
 Each News Category data is associated with ItemListDB(enum acting as Muliton), which
 creates an linked list of news items, containing title, description, and link.
-bg=blue
-group=1</panel_attributes>
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>600</x>
+      <y>20</y>
+      <w>240</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Note:
+XmlParser:
+doParse() calls the static function
+XmlFunctions.processParseMethod(), 
+which starts chain of responsibility.
+bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
